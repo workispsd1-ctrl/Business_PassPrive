@@ -138,6 +138,9 @@ p  { line-height: 1.75; color: var(--text-muted); }
   top: 0; left: 0; right: 0;
   z-index: 1000;
   padding: 16px 0;
+  background: rgba(13,13,13,0.92);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 2px 40px rgba(0,0,0,0.3);
   transition: var(--transition);
 }
 #navbar.scrolled {
@@ -1285,13 +1288,13 @@ p  { line-height: 1.75; color: var(--text-muted); }
 }
 
 [data-aos] {
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 1;
+  transform: none;
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 [data-aos].aos-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 [data-aos][data-delay="100"] { transition-delay: 0.1s; }
 [data-aos][data-delay="200"] { transition-delay: 0.2s; }
