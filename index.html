@@ -1045,9 +1045,9 @@
             <label>Tell us a bit about what you're looking for</label>
             <textarea name="message" rows="4" placeholder="I'd love to list my restaurant and use the table booking feature..."></textarea>
           </div>
-          <button type="submit" class="btn btn-primary btn-full">Send Message →</button>
+          <button type="submit" class="btn btn-primary btn-full" id="contactSubmitButton">Send Message →</button>
           <div id="formSuccess" class="form-success hidden">
-            <i class="fas fa-check-circle"></i> Thanks! We'll be in touch within 24 hours.
+            <i class="fas fa-check-circle"></i> Thank you. Your message has been submitted successfully.
           </div>
           <div id="formError" class="form-success form-error hidden">
             <i class="fas fa-circle-exclamation"></i> We couldn't send your message right now. Please try again.
@@ -1122,6 +1122,7 @@
     const audienceType = document.getElementById("audienceType");
     const submittedAt = document.getElementById("submittedAt");
     const contactTextarea = contactForm ? contactForm.querySelector("textarea[name='message']") : null;
+    const submitButton = document.getElementById("contactSubmitButton");
 
     emailjs.init({
       publicKey: EMAILJS_CONFIG.publicKey,
@@ -1172,10 +1173,10 @@
         submittedAt.value = new Date().toLocaleString();
       }
 
-      const submitButton = contactForm.querySelector('button[type="submit"]');
       if (submitButton) {
         submitButton.disabled = true;
-        submitButton.textContent = "Sending...";
+        submitButton.setAttribute("aria-busy", "true");
+        submitButton.textContent = "Submitting...";
       }
 
       emailjs.sendForm(
@@ -1187,6 +1188,9 @@
           if (formSuccess) formSuccess.classList.remove("hidden");
           contactForm.reset();
           resetAudienceSelection();
+          if (contactTextarea) {
+            contactTextarea.placeholder = "I'd love to list my restaurant and use the table booking feature...";
+          }
         },
         () => {
           if (formError) formError.classList.remove("hidden");
@@ -1194,6 +1198,7 @@
       ).finally(() => {
         if (submitButton) {
           submitButton.disabled = false;
+          submitButton.removeAttribute("aria-busy");
           submitButton.textContent = "Send Message →";
         }
       });
