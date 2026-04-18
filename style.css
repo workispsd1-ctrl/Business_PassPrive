@@ -164,13 +164,22 @@ p  { line-height: 1.75; color: var(--text-muted); }
   justify-content: space-between;
 }
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--font-serif);
   font-size: 1.4rem;
   color: var(--white);
   text-decoration: none;
   letter-spacing: 0.05em;
 }
-.logo span { color: var(--gold); }
+.logo-mark {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  display: block;
+}
+.logo-text span { color: var(--gold); }
 .nav-links {
   display: flex;
   list-style: none;
