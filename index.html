@@ -20,7 +20,7 @@
         <img src="Logo.png" alt="Pass Privé logo" class="logo-mark" />
         <span class="logo-text">PASS <span>PRIVÉ</span></span>
       </a>
-      <ul class="nav-links">
+      <ul class="nav-links" id="mainNav">
         <li><a href="#merchants">Merchants</a></li>
         <li><a href="#corporates">Corporates</a></li>
         <li><a href="#platforms">Platforms</a></li>
@@ -28,7 +28,7 @@
         <li><a href="#consumers">Consumers</a></li>
         <li><a href="#contact" class="nav-cta">Partner With Us</a></li>
       </ul>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mainNav">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -1042,7 +1042,7 @@
 
       <div class="team-layout">
         <div class="team-portraits">
-          <article class="team-card team-card-featured" data-aos="fade-up">
+          <article class="team-card team-card-featured team-card-kshitij-solo" data-aos="fade-up">
             <div class="team-photo team-photo-kshitij">
               <span>Add Kshitij image</span>
             </div>
@@ -1060,6 +1060,16 @@
             <h3>Bruno</h3>
             <p>Bruno brings extensive leadership experience across banking, insurance, and hospitality.</p>
             <p>He has held senior roles including CEO, Chief Commercial Officer, and Executive Director across Mauritius, South Africa, and the Middle East. Most recently, he served as Regional Head for IHG Group in Mauritius. At Pass Privé, he leads commercial strategy, partnerships, and market expansion.</p>
+          </article>
+
+          <article class="team-card team-card-featured" data-aos="fade-up" data-delay="200">
+            <div class="team-photo team-photo-bharat">
+              <span>Add Bharat image</span>
+            </div>
+            <div class="team-role">Founding Engineer</div>
+            <h3>Bharat</h3>
+            <p>Bharat leads engineering execution at Pass Privé, focused on building reliable, high-performance product experiences across the platform.</p>
+            <p>He works across frontend and backend systems to translate business goals into scalable technical solutions, ensuring fast iteration, product quality, and dependable delivery as the ecosystem grows.</p>
           </article>
         </div>
 
@@ -1161,11 +1171,11 @@
         <div class="footer-brand">
           <div class="footer-logo">PASS <span>PRIVÉ</span></div>
           <p>Mauritius' Lifestyle Membership Platform.<br />Discover • Book • Pay • Repeat.</p>
-          <div class="footer-socials">
+         <!--<div class="footer-socials">
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-linkedin"></i></a>
-          </div>
+          </div> -->
         </div>
         <div class="footer-links">
           <div class="fl-col">
@@ -1220,6 +1230,30 @@
     const submittedAt = document.getElementById("submittedAt");
     const contactTextarea = contactForm ? contactForm.querySelector("textarea[name='message']") : null;
     const submitButton = document.getElementById("contactSubmitButton");
+    const hamburger = document.getElementById("hamburger");
+    const mainNav = document.getElementById("mainNav");
+
+    if (hamburger && mainNav) {
+      const closeNavMenu = () => {
+        mainNav.classList.remove("mobile-open");
+        hamburger.classList.remove("open");
+        hamburger.setAttribute("aria-expanded", "false");
+      };
+
+      hamburger.addEventListener("click", () => {
+        const isOpen = mainNav.classList.toggle("mobile-open");
+        hamburger.classList.toggle("open", isOpen);
+        hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+
+      mainNav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeNavMenu);
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 900) closeNavMenu();
+      });
+    }
 
     emailjs.init({
       publicKey: EMAILJS_CONFIG.publicKey,

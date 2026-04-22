@@ -220,6 +220,9 @@ p  { line-height: 1.75; color: var(--text-muted); }
   border-radius: 2px;
   transition: var(--transition);
 }
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ============================================
    HERO
@@ -835,6 +838,9 @@ p  { line-height: 1.75; color: var(--text-muted); }
 .team-card-featured h3 {
   font-size: clamp(2rem, 3vw, 2.7rem);
 }
+.team-card-kshitij-solo {
+  grid-column: 1 / -1;
+}
 .team-card p {
   font-size: 0.88rem;
   color: rgba(255,255,255,0.66);
@@ -880,9 +886,18 @@ p  { line-height: 1.75; color: var(--text-muted); }
   background-image:
     linear-gradient(180deg, rgba(13,13,13,0.02), rgba(13,13,13,0.18)),
     url("Bruno.jpeg");
+  background-position: center, center 18%;
 }
 .team-photo-kshitij span,
 .team-photo-bruno span {
+  display: none;
+}
+.team-photo-bharat {
+  background-image:
+    linear-gradient(180deg, rgba(13,13,13,0.02), rgba(13,13,13,0.18)),
+    url("Bharat.png");
+}
+.team-photo-bharat span {
   display: none;
 }
 .team-icon-mark,
@@ -2006,11 +2021,55 @@ p  { line-height: 1.75; color: var(--text-muted); }
   .pm-grid { grid-template-columns: repeat(2, 1fr); }
   .numbers-grid { grid-template-columns: repeat(2, 1fr); }
   .team-card-featured { grid-template-columns: 1fr; }
+  .team-card-kshitij-solo { grid-column: auto; }
   .team-photo { min-height: 280px; }
 }
 
 @media (max-width: 900px) {
-  #hero { flex-direction: column; padding-top: 100px; gap: 40px; text-align: center; }
+  #navbar { padding: 10px 0; }
+  .nav-inner {
+    flex-wrap: nowrap;
+    row-gap: 0;
+  }
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+    position: relative;
+    z-index: 1002;
+  }
+  .nav-links.mobile-open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: rgba(13,13,13,0.97);
+    backdrop-filter: blur(20px);
+    padding: 16px 18px 20px;
+    gap: 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    z-index: 1001;
+  }
+  .nav-links.mobile-open li { width: 100%; }
+  .nav-links.mobile-open a {
+    display: block;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+  #hero { flex-direction: column; padding-top: 120px; gap: 40px; text-align: center; }
+  .hero-sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-badge {
+    display: flex;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .hero-ctas { justify-content: center; }
   .hero-pills { justify-content: center; }
   .hero-visual { align-self: center; }
@@ -2034,8 +2093,28 @@ p  { line-height: 1.75; color: var(--text-muted); }
     border-radius: 20px;
     font-size: 1.5rem;
   }
+  .team-photo-kshitij,
+  .team-photo-bruno,
+  .team-photo-bharat {
+    background-size: auto, contain;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center top;
+  }
   .feature-showcase, .feature-right { flex-direction: column; gap: 36px; }
   .feature-visual { flex: none; width: 100%; max-width: 420px; }
+  #merchants .section-label,
+  #merchants .section-title {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #merchants .section-intro {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .feature-text p { max-width: 100%; }
   .corp-layout { flex-direction: column; }
   .corp-why { flex: none; width: 100%; }
   .tiers-grid, .mtc-grid, .mtc-grid-3 { grid-template-columns: 1fr; }
@@ -2077,20 +2156,90 @@ p  { line-height: 1.75; color: var(--text-muted); }
   .pm-grid { grid-template-columns: 1fr; }
   .banks-cards { grid-template-columns: 1fr; }
   .merchant-cta-bar, .bank-cta-bar { flex-direction: column; text-align: center; padding: 28px; }
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-  .nav-links.mobile-open {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 60px; left: 0; right: 0;
-    background: rgba(13,13,13,0.97);
-    backdrop-filter: blur(20px);
-    padding: 20px;
-    gap: 4px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+  .logo {
+    gap: 8px;
+    font-size: 1.18rem;
+  }
+  .logo-mark {
+    width: 30px;
+    height: 30px;
+  }
+  .nav-links a {
+    font-size: 0.82rem;
+    padding: 7px 10px;
+  }
+  .nav-cta {
+    padding: 8px 14px !important;
+  }
+  .hero-pills {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 0;
+  }
+  .pill { flex: 0 1 auto; }
+  .feature-text {
+    text-align: center;
+  }
+  .feature-list li {
+    text-align: left;
+  }
+  .feature-tag {
+    white-space: normal;
+    line-height: 1.35;
+  }
+  .oc-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    align-items: center;
+  }
+  .oc-item > span:first-child {
+    grid-column: 1 / 2;
+  }
+  .oc-item .oc-qty {
+    grid-column: 1 / 2;
+  }
+  .oc-item > span:last-child {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    align-self: center;
+  }
+  .timeline {
+    margin-top: 40px;
+  }
+  .timeline::before {
+    left: 24px;
+  }
+  .timeline-item {
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .tl-dot {
+    flex: 0 0 48px;
+    height: 48px;
+    font-size: 0.7rem;
+    margin-top: 4px;
+  }
+  .tl-card {
+    padding: 20px 18px;
+  }
+  .tl-card ul li {
+    font-size: 0.8rem;
   }
   .problem-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
   .numbers-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 18px; }
+  .team-photo { min-height: 220px; }
+  .team-photo-kshitij,
+  .team-photo-bruno,
+  .team-photo-bharat {
+    background-position: center, center;
+  }
+  .mission-card,
+  .team-card { padding: 24px 18px; }
+  .team-ops-panel { gap: 18px; }
 }
