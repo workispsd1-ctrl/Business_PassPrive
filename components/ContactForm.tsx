@@ -1,7 +1,7 @@
 'use client';
 
 import emailjs from '@emailjs/browser';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 
 const audiences = [
   { key: 'consumer', label: "I'm a Consumer", icon: '👤', placeholder: "I'd love to learn more about memberships and savings..." },
@@ -14,20 +14,16 @@ type AudienceKey = (typeof audiences)[number]['key'];
 
 const EMAILJS_CONFIG = {
   publicKey: 'Q1tzdXAu-5wxCLarG',
-  serviceId: 'service_rfg07w4',
+  serviceId: 'service_zkpw3gm',
   templateId: 'template_k5kth6u',
 };
 
 export function ContactForm() {
-  const [selectedAudience, setSelectedAudience] = useState<AudienceKey | ''>('');
+  const [selectedAudience, setSelectedAudience] = useState<AudienceKey | ''>('merchant');
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errorVisible, setErrorVisible] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
-
-  useEffect(() => {
-    emailjs.init({ publicKey: EMAILJS_CONFIG.publicKey });
-  }, []);
 
   const selectedPlaceholder = useMemo(
     () => audiences.find((audience) => audience.key === selectedAudience)?.placeholder ?? audiences[1].placeholder,
@@ -50,12 +46,14 @@ export function ContactForm() {
         EMAILJS_CONFIG.serviceId,
         EMAILJS_CONFIG.templateId,
         formRef.current,
+        { publicKey: EMAILJS_CONFIG.publicKey }
       );
 
       formRef.current.reset();
       setSelectedAudience('merchant');
       setSubmitted(true);
-    } catch {
+    } catch (error) {
+      console.error('EmailJS send failed:', error);
       setErrorVisible(true);
     } finally {
       setSubmitting(false);
