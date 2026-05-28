@@ -4,7 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import logo from '../Logo.png';
+
+const logoSrc = '/images/Logo.png';
 
 const navItems = [
   { href: '/about', label: 'About The Team' },
@@ -29,7 +30,7 @@ export function SiteHeader() {
     <nav id="navbar">
       <div className="nav-inner">
         <Link href="/" className="logo" aria-label="Pass Privé home">
-          <Image src={logo} alt="PASSPRIVÉ logo" className="logo-mark" priority />
+          <Image src={logoSrc} alt="PASSPRIVÉ logo" className="logo-mark" width={50} height={50} priority />
           <span className="logo-text">PASSPRIVÉ</span>
         </Link>
 

@@ -944,12 +944,12 @@ p  { line-height: 1.75; color: var(--text-muted); }
 .team-photo-kshitij {
   background-image:
     linear-gradient(180deg, rgba(13,13,13,0.02), rgba(13,13,13,0.18)),
-    url("Kshitj.jpeg");
+    url("/images/Kshitj.jpeg");
 }
 .team-photo-bruno {
   background-image:
     linear-gradient(180deg, rgba(13,13,13,0.02), rgba(13,13,13,0.18)),
-    url("Bruno.jpeg");
+    url("/images/Bruno.jpeg");
   background-position: center, center 18%;
 }
 .team-photo-kshitij span,
@@ -959,7 +959,7 @@ p  { line-height: 1.75; color: var(--text-muted); }
 .team-photo-bharat {
   background-image:
     linear-gradient(180deg, rgba(13,13,13,0.02), rgba(13,13,13,0.18)),
-    url("Bharat.png");
+    url("/images/Bharat.png");
 }
 .team-photo-bharat span {
   display: none;
