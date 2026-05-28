@@ -29,7 +29,7 @@ export function SiteHeader() {
   return (
     <nav id="navbar">
       <div className="nav-inner">
-        <Link href="/" className="logo" aria-label="Pass Privé home">
+        <Link href="/" className="logo" aria-label="PassPrivé home">
           <Image src={logoSrc} alt="PASSPRIVÉ logo" className="logo-mark" width={50} height={50} priority />
           <span className="logo-text">PASSPRIVÉ</span>
         </Link>

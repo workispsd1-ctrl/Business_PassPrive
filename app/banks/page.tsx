@@ -35,7 +35,7 @@ export default function BanksPage() {
           <div className="pm-grid">
             <div className="pm-card"><div className="pm-icon">🔌</div><h4>White-Label Integration</h4><p>Embed PASSPRIVÉ's full marketplace inside your mobile banking or payment app under your brand identity. Seamless for your customers — zero build for you.</p></div>
             <div className="pm-card"><div className="pm-icon">💳</div><h4>Card Bundle Partnership</h4><p>Include a PASSPRIVÉ membership as a core benefit with specific card tiers. Instantly elevate your value proposition and give cardholders a reason to use their card daily.</p></div>
-            <div className="pm-card"><div className="pm-icon">🏦</div><h4>Strategic Acquiring Partner</h4><p>Become the exclusive payment acquirer for Mauritius' lifestyle marketplace. Process every transaction on Pass Privé — driving acquiring revenue and card-on-file growth.</p></div>
+            <div className="pm-card"><div className="pm-icon">🏦</div><h4>Strategic Acquiring Partner</h4><p>Become the exclusive payment acquirer for Mauritius' lifestyle marketplace. Process every transaction on PassPrivé — driving acquiring revenue and card-on-file growth.</p></div>
             <div className="pm-card"><div className="pm-icon">📊</div><h4>Data &amp; Loyalty Partner</h4><p>Leverage PASSPRIVÉ's merchant network to enrich your customer profiles. Power personalised offers and BNPL approvals with real lifestyle spend data.</p></div>
           </div>
         </div>

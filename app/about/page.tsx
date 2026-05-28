@@ -53,19 +53,21 @@ export default function AboutPage() {
               </div>
             </article>
 
-            <article className="team-card team-card-text" data-aos="fade-up" data-delay="200">
-              <div className="team-icon-mark"><i className="fas fa-code-branch" /></div>
-              <div className="team-role">Technology &amp; Product</div>
-              <h3>Pritisha Zalpuri</h3>
-              <p>
-                Pritisha leads technology and product execution, with over a decade of experience across financial
-                services and IT.
-              </p>
-              <p>
-                She has worked with S&amp;P, Old Mutual Bank in South Africa, and Tata Consultancy Services, building and
-                managing complex systems at scale. At PASSPRIVÉ, she drives platform architecture, product reliability,
-                and execution velocity.
-              </p>
+            <article className="team-card team-card-featured" data-aos="fade-up" data-delay="200">
+              <div className="team-photo team-photo-pritisha" />
+              <div className="team-info">
+                <div className="team-role">Technology &amp; Product</div>
+                <h3>Pritisha Zalpuri</h3>
+                <p>
+                  Pritisha leads technology and product execution, with over a decade of experience across financial
+                  services and IT.
+                </p>
+                <p>
+                  She has worked with S&amp;P, Old Mutual Bank in South Africa, and Tata Consultancy Services, building and
+                  managing complex systems at scale. At PASSPRIVÉ, she drives platform architecture, product reliability,
+                  and execution velocity.
+                </p>
+              </div>
             </article>
           </div>
 

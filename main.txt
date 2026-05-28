@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pass Privé — Mauritius' #1 Lifestyle Membership Platform</title>
+  <title>PassPrivé — Mauritius' #1 Lifestyle Membership Platform</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -41,7 +41,7 @@
     <div class="hero-content">
       <div class="hero-badge">🇲🇺 Made for Mauritius</div>
       <h1>The Lifestyle Platform<br /><em>Every Mauritian Deserves</em></h1>
-      <p class="hero-sub">Pass Privé connects consumers, merchants, corporates and financial institutions inside one beautifully simple lifestyle super-app — driving discovery, bookings, loyalty and payments.</p>
+      <p class="hero-sub">PassPrivé connects consumers, merchants, corporates and financial institutions inside one beautifully simple lifestyle super-app — driving discovery, bookings, loyalty and payments.</p>
       <div class="hero-pills">
         <span class="pill">🍽️ Dining</span>
         <span class="pill">🛍️ Retail</span>
@@ -157,7 +157,7 @@
       <div class="solution-inner">
         <div class="solution-text">
           <div class="section-label light">One Platform. Four Audiences.</div>
-          <h2 class="section-title light">Pass Privé is the<br /><em>Missing Link</em></h2>
+          <h2 class="section-title light">PassPrivé is the<br /><em>Missing Link</em></h2>
           <p class="solution-desc">We built a single, beautifully simple platform that solves the lifestyle gap for everyone at once. Consumers discover and save. Merchants fill tables and build loyalty. Corporates delight their teams. Banks drive daily engagement.</p>
           <div class="solution-pillars">
             <div class="pillar">
@@ -214,7 +214,7 @@
     <div class="container">
       <div class="section-label">For Merchants</div>
       <h2 class="section-title">More Covers. More Repeat Business.<br /><em>Zero Extra Work.</em></h2>
-      <p class="section-intro">Pass Privé gives dining and retail merchants a complete digital toolkit — without hiring a developer or changing how you run your business.</p>
+      <p class="section-intro">PassPrivé gives dining and retail merchants a complete digital toolkit — without hiring a developer or changing how you run your business.</p>
 
       <div class="merchant-features">
         <!-- Table Booking -->
@@ -245,7 +245,7 @@
           <div class="feature-text">
             <div class="feature-tag">🗓️ Table Booking</div>
             <h3>Fill Every Table,<br />Every Night</h3>
-            <p>Guests book directly through Pass Privé — no phone calls, no double bookings, no no-shows left untracked. You get a real-time dashboard showing covers booked, peak times and cancellations.</p>
+            <p>Guests book directly through PassPrivé — no phone calls, no double bookings, no no-shows left untracked. You get a real-time dashboard showing covers booked, peak times and cancellations.</p>
             <ul class="feature-list">
               <li><i class="fas fa-check-circle"></i> Real-time table availability management</li>
               <li><i class="fas fa-check-circle"></i> Instant booking confirmation for guests</li>
@@ -358,7 +358,7 @@
           <div class="extra-card">
             <div class="extra-icon">⭐</div>
             <h4>Loyalty & Rewards</h4>
-            <p>Build a loyal following with points, stamps and cashback — all managed automatically inside Pass Privé.</p>
+            <p>Build a loyal following with points, stamps and cashback — all managed automatically inside PassPrivé.</p>
           </div>
           <div class="extra-card">
             <div class="extra-icon">📊</div>
@@ -368,7 +368,7 @@
           <div class="extra-card">
             <div class="extra-icon">📢</div>
             <h4>Free Marketing</h4>
-            <p>Your restaurant or store is featured to thousands of active Pass Privé members — at no extra advertising cost.</p>
+            <p>Your restaurant or store is featured to thousands of active PassPrivé members — at no extra advertising cost.</p>
           </div>
           <div class="extra-card">
             <div class="extra-icon">💬</div>
@@ -383,7 +383,7 @@
           <div class="extra-card extra-card-highlight">
             <div class="extra-icon">🌐</div>
             <h4>Custom Website, Built for You</h4>
-            <p>Need a full business website? Pass Privé Platforms designs and builds beautiful, fast, mobile-ready websites for merchants — branded, SEO-ready, and connected to your Pass Privé profile from day one.</p>
+            <p>Need a full business website? PassPrivé Platforms designs and builds beautiful, fast, mobile-ready websites for merchants — branded, SEO-ready, and connected to your PassPrivé profile from day one.</p>
             <div class="extra-tag">New Service</div>
           </div>
         </div>
@@ -392,7 +392,7 @@
       <div class="merchant-cta-bar">
         <div class="mcta-text">
           <strong>Ready to fill your tables and grow your business?</strong>
-          <p>Join 200+ merchants already on Pass Privé</p>
+          <p>Join 200+ merchants already on PassPrivé</p>
         </div>
         <a href="#contact" class="btn btn-primary">Become a Merchant Partner</a>
       </div>
@@ -411,7 +411,7 @@
           <div class="corp-card" data-aos="fade-up">
             <div class="corp-card-icon">🎁</div>
             <h3>Staff Benefits &amp; Perks</h3>
-            <p>Give every employee a Pass Privé membership loaded with curated dining, retail, hotel and experience deals — a benefit they'll actually use and talk about.</p>
+            <p>Give every employee a PassPrivé membership loaded with curated dining, retail, hotel and experience deals — a benefit they'll actually use and talk about.</p>
             <div class="corp-tags">
               <span>🍽️ Dining privileges</span>
               <span>🛍️ Shopping discounts</span>
@@ -422,7 +422,7 @@
           <div class="corp-card" data-aos="fade-up" data-delay="100">
             <div class="corp-card-icon">🏆</div>
             <h3>Customer Loyalty Rewards</h3>
-            <p>Reward your top customers with Pass Privé memberships. High perceived value, zero admin burden. A gift that drives retention and word-of-mouth.</p>
+            <p>Reward your top customers with PassPrivé memberships. High perceived value, zero admin burden. A gift that drives retention and word-of-mouth.</p>
             <div class="corp-tags">
               <span>💎 Premium gifting</span>
               <span>🔄 Recurring value</span>
@@ -442,7 +442,7 @@
           <div class="corp-card" data-aos="fade-up" data-delay="300">
             <div class="corp-card-icon">🤝</div>
             <h3>White-Label Options</h3>
-            <p>Want your own branded lifestyle app? We can white-label Pass Privé under your corporate identity — your colors, your logo, powered by our platform.</p>
+            <p>Want your own branded lifestyle app? We can white-label PassPrivé under your corporate identity — your colors, your logo, powered by our platform.</p>
             <div class="corp-tags">
               <span>🎨 Custom branding</span>
               <span>🔒 Exclusive deals</span>
@@ -457,7 +457,7 @@
             <div class="cb-num">01</div>
             <div class="cb-content">
               <h4>High Perceived Value, Low Cost</h4>
-              <p>A Pass Privé membership feels like a premium gift — but costs a fraction of traditional benefit programs. Members see real MUR savings every week.</p>
+              <p>A PassPrivé membership feels like a premium gift — but costs a fraction of traditional benefit programs. Members see real MUR savings every week.</p>
             </div>
           </div>
           <div class="corp-benefit">
@@ -526,12 +526,12 @@
         </div>
       </div><!-- /corp-tiers -->
 
-      <!-- ── PASS PRIVÉ PLATFORMS ── -->
+      <!-- ── PassPrivÃ© PLATFORMS ── -->
       <div class="platforms-section" id="platforms">
         <div class="platforms-header">
           <div class="platforms-eyebrow">Beyond the App</div>
-          <h3 class="platforms-title">Pass Privé <em>Platforms</em></h3>
-          <p class="platforms-desc">We're not just a membership app. Pass Privé Platforms is a full-service agency that helps businesses in Mauritius build, grow and digitise — end to end. Think of us as your in-house tech, design and marketing team, without the overhead.</p>
+          <h3 class="platforms-title">PassPrivé <em>Platforms</em></h3>
+          <p class="platforms-desc">We're not just a membership app. PassPrivé Platforms is a full-service agency that helps businesses in Mauritius build, grow and digitise — end to end. Think of us as your in-house tech, design and marketing team, without the overhead.</p>
         </div>
 
         <div class="platforms-grid">
@@ -614,7 +614,7 @@
             <div class="pcta-tag">One partner. Every capability.</div>
             <div class="pcta-title">We build the technology and brand behind Mauritius' best businesses.</div>
           </div>
-          <a href="#contact" class="btn btn-primary">Talk to Pass Privé Platforms</a>
+          <a href="#contact" class="btn btn-primary">Talk to PassPrivé Platforms</a>
         </div>
       </div>
     </div>
@@ -624,7 +624,7 @@
     <div class="container">
       <div class="section-label light">For Banks &amp; Financial Institutions</div>
       <h2 class="section-title light">Turn Your Payment App<br /><em>Into a Daily Habit</em></h2>
-      <p class="section-intro light">Most banking and fintech apps are opened once a month to check a balance. Pass Privé turns your app into something people open every single day.</p>
+      <p class="section-intro light">Most banking and fintech apps are opened once a month to check a balance. PassPrivé turns your app into something people open every single day.</p>
 
       <div class="banks-layout">
         <div class="banks-stats">
@@ -649,7 +649,7 @@
           <div class="bank-card" data-aos="fade-up">
             <div class="bank-card-icon"><i class="fas fa-plug"></i></div>
             <h3>Plug-and-Play Integration</h3>
-            <p>No development resources needed from your team. Pass Privé integrates into your existing app or digital wallet as a fully-managed lifestyle marketplace module.</p>
+            <p>No development resources needed from your team. PassPrivé integrates into your existing app or digital wallet as a fully-managed lifestyle marketplace module.</p>
           </div>
           <div class="bank-card" data-aos="fade-up" data-delay="100">
             <div class="bank-card-icon"><i class="fas fa-credit-card"></i></div>
@@ -659,12 +659,12 @@
           <div class="bank-card" data-aos="fade-up" data-delay="200">
             <div class="bank-card-icon"><i class="fas fa-hand-holding-usd"></i></div>
             <h3>BNPL &amp; Consumer Lending</h3>
-            <p>Embedded Buy Now Pay Later for lifestyle purchases. Drive consumer finance uptake through the Pass Privé marketplace — natural credit touchpoints at the moment of desire.</p>
+            <p>Embedded Buy Now Pay Later for lifestyle purchases. Drive consumer finance uptake through the PassPrivé marketplace — natural credit touchpoints at the moment of desire.</p>
           </div>
           <div class="bank-card" data-aos="fade-up" data-delay="300">
             <div class="bank-card-icon"><i class="fas fa-coins"></i></div>
             <h3>Loyalty Points Engine</h3>
-            <p>Integrate your points currency into the Pass Privé ecosystem. Members earn and burn points on dining, shopping and experiences — creating a powerful retention loop.</p>
+            <p>Integrate your points currency into the PassPrivé ecosystem. Members earn and burn points on dining, shopping and experiences — creating a powerful retention loop.</p>
           </div>
           <div class="bank-card" data-aos="fade-up" data-delay="400">
             <div class="bank-card-icon"><i class="fas fa-chart-pie"></i></div>
@@ -674,7 +674,7 @@
           <div class="bank-card" data-aos="fade-up" data-delay="500">
             <div class="bank-card-icon"><i class="fas fa-star"></i></div>
             <h3>Premium Card Positioning</h3>
-            <p>Bundle Pass Privé Gold or Platinum membership with your premium card products. A tangible, daily-use benefit that justifies annual fees and drives upgrades.</p>
+            <p>Bundle PassPrivé Gold or Platinum membership with your premium card products. A tangible, daily-use benefit that justifies annual fees and drives upgrades.</p>
           </div>
         </div>
       </div>
@@ -685,22 +685,22 @@
           <div class="pm-card">
             <div class="pm-icon">🔌</div>
             <h4>White-Label Integration</h4>
-            <p>Embed Pass Privé's full marketplace inside your mobile banking or payment app under your brand identity. Seamless for your customers — zero build for you.</p>
+            <p>Embed PassPrivé's full marketplace inside your mobile banking or payment app under your brand identity. Seamless for your customers — zero build for you.</p>
           </div>
           <div class="pm-card">
             <div class="pm-icon">💳</div>
             <h4>Card Bundle Partnership</h4>
-            <p>Include a Pass Privé membership as a core benefit with specific card tiers. Instantly elevate your value proposition and give cardholders a reason to use their card daily.</p>
+            <p>Include a PassPrivé membership as a core benefit with specific card tiers. Instantly elevate your value proposition and give cardholders a reason to use their card daily.</p>
           </div>
           <div class="pm-card">
             <div class="pm-icon">🏦</div>
             <h4>Strategic Acquiring Partner</h4>
-            <p>Become the exclusive payment acquirer for Mauritius' lifestyle marketplace. Process every transaction on Pass Privé — driving acquiring revenue and card-on-file growth.</p>
+            <p>Become the exclusive payment acquirer for Mauritius' lifestyle marketplace. Process every transaction on PassPrivé — driving acquiring revenue and card-on-file growth.</p>
           </div>
           <div class="pm-card">
             <div class="pm-icon">📊</div>
             <h4>Data &amp; Loyalty Partner</h4>
-            <p>Leverage Pass Privé's merchant network to enrich your customer profiles. Power personalised offers and BNPL approvals with real lifestyle spend data.</p>
+            <p>Leverage PassPrivé's merchant network to enrich your customer profiles. Power personalised offers and BNPL approvals with real lifestyle spend data.</p>
           </div>
         </div>
       </div>
@@ -720,14 +720,14 @@
     <div class="container">
       <div class="section-label">For Consumers</div>
       <h2 class="section-title">One Membership.<br /><em>The Best of Mauritius.</em></h2>
-      <p class="section-intro">Whether you're a local, an expat or a tourist — Pass Privé puts the finest dining, shopping and experiences at your fingertips, with real savings every time.</p>
+      <p class="section-intro">Whether you're a local, an expat or a tourist — PassPrivé puts the finest dining, shopping and experiences at your fingertips, with real savings every time.</p>
 
       <div class="consumer-layout">
         <div class="consumer-app">
           <div class="consumer-phone">
             <div class="c-screen">
               <div class="c-topbar">
-                <span>PASS PRIVÉ</span>
+                <span>PassPrivÃ©</span>
                 <div class="c-gold-badge">GOLD</div>
               </div>
               <div class="c-explore">
@@ -787,14 +787,14 @@
             <div class="cb-icon">🎖️</div>
             <div class="cb-content">
               <h4>Earn Points on Everything</h4>
-              <p>Every purchase earns Pass Privé points. Redeem them for free meals, shopping vouchers or exclusive experiences. The more you use it, the more you save.</p>
+              <p>Every purchase earns PassPrivé points. Redeem them for free meals, shopping vouchers or exclusive experiences. The more you use it, the more you save.</p>
             </div>
           </div>
           <div class="cb-item">
             <div class="cb-icon">🌍</div>
             <div class="cb-content">
               <h4>Perfect for Expats &amp; Tourists</h4>
-              <p>New to Mauritius? Pass Privé is the fastest way to discover where locals actually eat and shop — with deals not available anywhere else.</p>
+              <p>New to Mauritius? PassPrivé is the fastest way to discover where locals actually eat and shop — with deals not available anywhere else.</p>
             </div>
           </div>
         </div>
@@ -879,7 +879,7 @@
             <div class="mtc-tagline">Maximum savings, maximum lifestyle</div>
             <ul>
               <li>Everything in Gold</li>
-              <li>+10% <em>additional cashback</em> exclusively from Pass Privé on top of merchant deals</li>
+              <li>+10% <em>additional cashback</em> exclusively from PassPrivé on top of merchant deals</li>
               <li>Early access to new restaurants &amp; brand launches</li>
               <li>Priority table booking &amp; concierge service</li>
               <li>Exclusive Platinum-only member events</li>
@@ -890,7 +890,7 @@
           </div>
 
         </div>
-        <p class="mtc-footnote">* 10% additional cashback applied on selected Pass Privé partner transactions. Terms apply.</p>
+        <p class="mtc-footnote">* 10% additional cashback applied on selected PassPrivé partner transactions. Terms apply.</p>
       </div>
     </div>
   </section>
@@ -1090,7 +1090,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 Pass Privé. All rights reserved. Confidential — For Partner Review.</p>
+        <p>© 2026 PassPrivé. All rights reserved. Confidential — For Partner Review.</p>
         <p class="footer-tagline">Made with ❤️ in Mauritius 🇲🇺</p>
       </div>
     </div>

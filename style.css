@@ -1,5 +1,5 @@
 /* =============================================
-   PASS PRIVÉ — LANDING PAGE STYLES
+   PassPrivÃ© — LANDING PAGE STYLES
    ============================================= */
 
 /* ── RESET & BASE ── */
@@ -944,12 +944,12 @@ p  { line-height: 1.75; color: var(--text-muted); }
 .team-photo-kshitij {
   background-image:
     linear-gradient(180deg, rgba(13,13,13,0.02), rgba(13,13,13,0.18)),
-    url("Kshitj.jpeg");
+    url("/images/Kshitj.jpeg");
 }
 .team-photo-bruno {
   background-image:
     linear-gradient(180deg, rgba(13,13,13,0.02), rgba(13,13,13,0.18)),
-    url("Bruno.jpeg");
+    url("/images/Bruno.png");
   background-position: center, center 18%;
 }
 .team-photo-kshitij span,
@@ -959,7 +959,12 @@ p  { line-height: 1.75; color: var(--text-muted); }
 .team-photo-bharat {
   background-image:
     linear-gradient(180deg, rgba(13,13,13,0.02), rgba(13,13,13,0.18)),
-    url("Bharat.png");
+    url("/images/Bharat.png");
+}
+.team-photo-pritisha {
+  background-image:
+    linear-gradient(180deg, rgba(13,13,13,0.02), rgba(13,13,13,0.18)),
+    url("/images/Pritisha.jpeg");
 }
 .team-photo-bharat span {
   display: none;
@@ -1956,7 +1961,7 @@ p  { line-height: 1.75; color: var(--text-muted); }
 }
 
 /* ============================================
-   PASS PRIVÉ PLATFORMS SECTION
+   PassPrivÃ© PLATFORMS SECTION
    ============================================ */
 .platforms-section {
   margin-top: 80px;
@@ -2166,7 +2171,8 @@ p  { line-height: 1.75; color: var(--text-muted); }
   }
   .team-photo-kshitij,
   .team-photo-bruno,
-  .team-photo-bharat {
+  .team-photo-bharat,
+  .team-photo-pritisha {
     background-size: auto, contain;
     background-repeat: no-repeat, no-repeat;
     background-position: center, center top;
@@ -2307,7 +2313,8 @@ p  { line-height: 1.75; color: var(--text-muted); }
   .team-photo { min-height: 190px; }
   .team-photo-kshitij,
   .team-photo-bruno,
-  .team-photo-bharat {
+  .team-photo-bharat,
+  .team-photo-pritisha {
     background-position: center, center;
   }
   .mission-card,

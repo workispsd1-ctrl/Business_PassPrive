@@ -1,7 +1,7 @@
-# Pass Privé — Landing Page
+# PassPrivé — Landing Page
 
 ## Project Overview
-A high-quality, fully responsive marketing landing page for **Pass Privé**, Mauritius' #1 Lifestyle Membership Platform. Built to serve as a pitch tool for the Chief Business Officer (Bruno) when approaching merchants, corporates, and financial institutions.
+A high-quality, fully responsive marketing landing page for **PassPrivé**, Mauritius' #1 Lifestyle Membership Platform. Built to serve as a pitch tool for the Chief Business Officer (Bruno) when approaching merchants, corporates, and financial institutions.
 
 ## Live URL
 `index.html` — Root landing page

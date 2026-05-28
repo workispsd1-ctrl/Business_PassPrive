@@ -2,7 +2,7 @@
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./style.css ***!
   \*******************************************************************************************************************************************************************************************************************************************************/
 /* =============================================
-   PASS PRIVÉ — LANDING PAGE STYLES
+   PassPrivÃ© — LANDING PAGE STYLES
    ============================================= */
 
 /* ── RESET & BASE ── */
@@ -957,12 +957,12 @@ p  { line-height: 1.75; color: var(--text-muted); }
 .team-photo-kshitij {
   background-image:
     linear-gradient(180deg, rgba(13,13,13,0.02), rgba(13,13,13,0.18)),
-    url(/_next/static/media/Kshitj.3ab2acb1.jpeg);
+    url("/images/Kshitj.jpeg");
 }
 .team-photo-bruno {
   background-image:
     linear-gradient(180deg, rgba(13,13,13,0.02), rgba(13,13,13,0.18)),
-    url(/_next/static/media/Bruno.853cfe32.jpeg);
+    url("/images/Bruno.png");
   background-position: center, center 18%;
 }
 .team-photo-kshitij span,
@@ -972,7 +972,12 @@ p  { line-height: 1.75; color: var(--text-muted); }
 .team-photo-bharat {
   background-image:
     linear-gradient(180deg, rgba(13,13,13,0.02), rgba(13,13,13,0.18)),
-    url(/_next/static/media/Bharat.cf44ecf1.png);
+    url("/images/Bharat.png");
+}
+.team-photo-pritisha {
+  background-image:
+    linear-gradient(180deg, rgba(13,13,13,0.02), rgba(13,13,13,0.18)),
+    url("/images/Pritisha.jpeg");
 }
 .team-photo-bharat span {
   display: none;
@@ -1975,7 +1980,7 @@ p  { line-height: 1.75; color: var(--text-muted); }
 }
 
 /* ============================================
-   PASS PRIVÉ PLATFORMS SECTION
+   PassPrivÃ© PLATFORMS SECTION
    ============================================ */
 .platforms-section {
   margin-top: 80px;
@@ -2187,7 +2192,8 @@ p  { line-height: 1.75; color: var(--text-muted); }
   }
   .team-photo-kshitij,
   .team-photo-bruno,
-  .team-photo-bharat {
+  .team-photo-bharat,
+  .team-photo-pritisha {
     background-size: auto, contain;
     background-repeat: no-repeat, no-repeat;
     background-position: center, center top;
@@ -2329,7 +2335,8 @@ p  { line-height: 1.75; color: var(--text-muted); }
   .team-photo { min-height: 190px; }
   .team-photo-kshitij,
   .team-photo-bruno,
-  .team-photo-bharat {
+  .team-photo-bharat,
+  .team-photo-pritisha {
     background-position: center, center;
   }
   .mission-card,
