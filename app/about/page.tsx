@@ -71,6 +71,8 @@ export default function AboutPage() {
             </article>
           </div>
 
+        
+
           <div className="team-support-grid">
               <article className="team-card team-card-featured" data-aos="fade-up" data-delay="200">
                 <div className="team-photo team-photo-bharat" />
