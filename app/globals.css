@@ -1,0 +1,110 @@
+@import "../style.css";
+
+.site-main {
+  flex: 1 1 auto;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--white);
+  margin: 0;
+}
+
+.page-shell {
+  padding-top: 120px;
+}
+
+/* Ensure dark page shells fill the viewport to avoid large white gaps */
+.page-shell.section-dark {
+  background: var(--dark);
+  color: var(--white);
+  min-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make the direct container stretch so the dark background covers the area */
+.page-shell.section-dark > .container {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.page-hero {
+  padding: 80px 0 48px;
+  background: linear-gradient(180deg, rgba(13, 13, 13, 0.98), rgba(13, 13, 13, 0.92));
+  color: var(--white);
+}
+
+.page-hero .section-title {
+  margin-bottom: 16px;
+}
+
+.page-hero .section-intro {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0;
+}
+
+.page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.route-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.route-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.route-card strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--dark);
+}
+
+.route-card p {
+  margin: 0;
+}
+
+.nav-links a.active,
+.nav-links a[aria-current="page"] {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.nav-cta[aria-current="page"] {
+  color: var(--dark) !important;
+}
+
+.contact-option {
+  appearance: none;
+  text-align: left;
+}
+
+.contact-option:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  .page-shell {
+    padding-top: 100px;
+  }
+}
