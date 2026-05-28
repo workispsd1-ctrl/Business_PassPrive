@@ -22,9 +22,7 @@ export default function AboutPage() {
         <div className="team-layout">
           <div className="team-portraits">
             <article className="team-card team-card-featured team-card-kshitij-solo" data-aos="fade-up">
-              <div className="team-photo team-photo-kshitij">
-                <span>Add Kshitij image</span>
-              </div>
+              <div className="team-photo team-photo-kshitij" />
               <div className="team-info">
                 <div className="team-role">Founder &amp; CEO</div>
                 <h3>Kshitij Sharma</h3>
@@ -41,9 +39,7 @@ export default function AboutPage() {
             </article>
 
             <article className="team-card team-card-featured" data-aos="fade-up" data-delay="100">
-              <div className="team-photo team-photo-bruno">
-                <span>Add Bruno image</span>
-              </div>
+              <div className="team-photo team-photo-bruno" />
               <div className="team-info">
                 <div className="team-role">Chief Business Officer</div>
                 <h3>Bruno Rochecouste</h3>
@@ -75,9 +71,7 @@ export default function AboutPage() {
 
           <div className="team-support-grid">
               <article className="team-card team-card-featured" data-aos="fade-up" data-delay="200">
-                <div className="team-photo team-photo-bharat">
-                  <span>Add Bharat image</span>
-                </div>
+                <div className="team-photo team-photo-bharat" />
               <div className="team-info">
                 <div className="team-role">Founding Engineer</div>
                 <h3>Bharat Nanavathula</h3>
