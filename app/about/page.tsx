@@ -56,7 +56,7 @@ export default function AboutPage() {
             <article className="team-card team-card-text" data-aos="fade-up" data-delay="200">
               <div className="team-icon-mark"><i className="fas fa-code-branch" /></div>
               <div className="team-role">Technology &amp; Product</div>
-              <h3>Pritisha</h3>
+              <h3>Pritisha Zalpuri</h3>
               <p>
                 Pritisha leads technology and product execution, with over a decade of experience across financial
                 services and IT.

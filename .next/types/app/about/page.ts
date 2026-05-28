@@ -1,4 +1,4 @@
-// File: C:\Users\varun\Downloads\passprivebusiness\Business_PassPrive\app\about\page.tsx
+// File: /Users/Bharat/Work/Nandak/PassPrive_Business/app/about/page.tsx
 import * as entry from '../../../../app/about/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

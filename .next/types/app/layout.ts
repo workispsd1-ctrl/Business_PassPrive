@@ -1,4 +1,4 @@
-// File: C:\Users\varun\Downloads\passprivebusiness\Business_PassPrive\app\layout.tsx
+// File: /Users/Bharat/Work/Nandak/PassPrive_Business/app/layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
