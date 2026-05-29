@@ -6,7 +6,7 @@ export function SiteFooter() {
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand">
-            <div className="footer-logo">PASS <span>PRIVÉ</span></div>
+            <div className="footer-logo">PASSPRIVÉ</div>
             <p>Mauritius' Lifestyle Membership Platform.<br />Discover • Book • Pay • Repeat.</p>
           </div>
 

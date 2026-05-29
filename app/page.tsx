@@ -218,68 +218,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="roadmap" className="section-gap">
-        <div className="container">
-          <div className="section-label">2026–2029 Roadmap</div>
-          <h2 className="section-title">
-            Where We're Headed<br />
-            <em>Together</em>
-          </h2>
-          <div className="timeline">
-            <div className="timeline-item tl-left">
-              <div className="tl-dot">2026</div>
-              <div className="tl-card">
-                <h4>Foundation & Launch</h4>
-                <ul>
-                  <li>Core marketplace live - dining, retail, experiences</li>
-                  <li>Table booking and QR menus rolled out</li>
-                  <li>First financial institution partnership</li>
-                  <li>50K consumer members target</li>
-                  <li>Corporate benefits program launch</li>
-                </ul>
-              </div>
-            </div>
-            <div className="timeline-item tl-right">
-              <div className="tl-dot">2027</div>
-              <div className="tl-card">
-                <h4>Scale & Deepen</h4>
-                <ul>
-                  <li>BNPL & consumer finance integration</li>
-                  <li>Order & Collect fully deployed island-wide</li>
-                  <li>Multi-bank loyalty partnerships live</li>
-                  <li>Hotel and tourism sector integration</li>
-                  <li>150K+ active members</li>
-                </ul>
-              </div>
-            </div>
-            <div className="timeline-item tl-left">
-              <div className="tl-dot">2028</div>
-              <div className="tl-card">
-                <h4>Ecosystem Dominance</h4>
-                <ul>
-                  <li>White-label platform for regional banks</li>
-                  <li>Regional expansion to Réunion and Seychelles</li>
-                  <li>AI-powered personalised recommendations</li>
-                  <li>Full payment super-app capabilities</li>
-                  <li>300K+ members</li>
-                </ul>
-              </div>
-            </div>
-            <div className="timeline-item tl-right">
-              <div className="tl-dot">2029</div>
-              <div className="tl-card">
-                <h4>Market Leadership</h4>
-                <ul>
-                  <li>Mauritius' #1 lifestyle super-app</li>
-                  <li>Full fintech and lifestyle convergence</li>
-                  <li>IPO-ready growth trajectory</li>
-                  <li>500K+ active users across the region</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }
