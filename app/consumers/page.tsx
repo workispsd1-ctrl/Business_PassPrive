@@ -15,7 +15,7 @@ export default function ConsumersPage() {
               <div className="c-screen">
                 <div className="c-topbar">
                   <span>PASSPRIVÉ</span>
-                  <div className="c-gold-badge">GOLD</div>
+                  <div className="c-gold-badge">Premium</div>
                 </div>
                 <div className="c-explore">
                   <div className="c-explore-title">Explore Near You</div>
@@ -73,8 +73,8 @@ export default function ConsumersPage() {
             <div className="cb-item">
               <div className="cb-icon">🎖️</div>
               <div className="cb-content">
-                <h4>Earn Points on Everything</h4>
-                <p>Every purchase earns PASSPRIVÉ points. Redeem them for free meals, shopping vouchers or exclusive experiences. The more you use it, the more you save.</p>
+                <h4>Earn Cashback on Every Payment</h4>
+                <p>Pay with PASSPRIVÉ and earn cashback points on every transaction — <strong>1 point = MUR 1</strong>. Spend them like cash on your next meal, purchase or experience. The higher your tier, the more you earn.</p>
               </div>
             </div>
             <div className="cb-item">
@@ -88,32 +88,64 @@ export default function ConsumersPage() {
         </div>
 
         <div className="savings-math-banner" data-aos="fade-up">
-          <div className="smb-label">💡 Does it pay for itself?</div>
+          <div className="smb-label">💡 How much cashback can you earn?</div>
           <div className="smb-title">The maths are pretty simple.</div>
           <div className="smb-calc">
             <div className="smb-step">
-              <div className="smb-val">MUR 2,000</div>
-              <div className="smb-desc">Average dining bill per outing</div>
+              <div className="smb-val">MUR 10,000</div>
+              <div className="smb-desc">Spent at Preferred Partners per month</div>
             </div>
             <div className="smb-op">×</div>
             <div className="smb-step">
-              <div className="smb-val">20%</div>
-              <div className="smb-desc">Average discount on deals</div>
+              <div className="smb-val">4%</div>
+              <div className="smb-desc">Black member cashback rate</div>
             </div>
             <div className="smb-op">×</div>
             <div className="smb-step">
-              <div className="smb-val">3×/month</div>
-              <div className="smb-desc">Times you dine out per month</div>
+              <div className="smb-val">12 months</div>
+              <div className="smb-desc">Earning all year round</div>
             </div>
             <div className="smb-op">=</div>
             <div className="smb-step smb-result">
-              <div className="smb-val">MUR 14,400</div>
-              <div className="smb-desc">Saved on dining alone per year</div>
+              <div className="smb-val">MUR 4,800</div>
+              <div className="smb-desc">Cashback points earned per year</div>
             </div>
           </div>
           <div className="smb-footer">
-            Gold membership costs <strong>MUR 4,000/year</strong>. That's a <strong className="smb-highlight">10× return</strong> just on restaurant savings — before retail, events and experiences even count.
+            Cashback points are worth <strong>1 point = MUR 1</strong> — that's <strong className="smb-highlight">real money back</strong> on dining, retail and experiences, on top of every member deal you already enjoy.
           </div>
+        </div>
+
+        <div className="cashback-rewards" data-aos="fade-up">
+          <div className="cr-title">Earn Cashback at Every PASSPRIVÉ Partner</div>
+          <p className="cr-intro">Pay with PASSPRIVÉ and earn cashback points automatically. How much you earn depends on the partner type and your membership tier. <strong>1 point = MUR 1.</strong></p>
+          <div className="cr-table">
+            <div className="cr-row cr-head">
+              <div className="cr-cell cr-partner">Partner type</div>
+              <div className="cr-cell">🆓 Free</div>
+              <div className="cr-cell">⭐ Premium</div>
+              <div className="cr-cell">🖤 Black</div>
+            </div>
+            <div className="cr-row">
+              <div className="cr-cell cr-partner">
+                <strong>✅ Verified Pay Partner</strong>
+                <span>Every customer earns the same rate</span>
+              </div>
+              <div className="cr-cell cr-rate">0.5%</div>
+              <div className="cr-cell cr-rate">0.5%</div>
+              <div className="cr-cell cr-rate">0.5%</div>
+            </div>
+            <div className="cr-row">
+              <div className="cr-cell cr-partner">
+                <strong>👑 Preferred Partner</strong>
+                <span>Higher cashback that scales with your tier</span>
+              </div>
+              <div className="cr-cell cr-rate">0.5%</div>
+              <div className="cr-cell cr-rate cr-rate-up">2%</div>
+              <div className="cr-cell cr-rate cr-rate-up">4%</div>
+            </div>
+          </div>
+          <p className="cr-footnote">Cashback at Preferred Partners may include merchant-funded rewards credited instantly to your account. Use these credits within <strong>14 days</strong> (1 point = MUR 1).</p>
         </div>
 
         <div className="membership-tiers-consumer">
@@ -128,50 +160,50 @@ export default function ConsumersPage() {
               <ul>
                 <li>Browse all restaurants, stores &amp; experiences</li>
                 <li>View menus and venue profiles</li>
-                <li>See available deals (blurred preview)</li>
+                <li>Earn <strong>0.5% cashback</strong> at every PASSPRIVÉ partner</li>
                 <li>Explore events &amp; experiences</li>
               </ul>
-              <div className="mtc-locked-note">🔒 Deals &amp; bookings require a paid membership</div>
+              <div className="mtc-locked-note">🔒 Premium deals &amp; bookings require a paid membership</div>
             </div>
 
             <div className="mtc-card gold">
               <div className="mtc-popular-tag">⭐ Best Value</div>
               <div className="mtc-price-row">
-                <div className="mtc-badge">🥇 Gold</div>
+                <div className="mtc-badge">⭐ Premium</div>
                 <div className="mtc-price">MUR 4,000 <span className="mtc-per">/year</span></div>
               </div>
               <div className="mtc-tagline">The full lifestyle experience</div>
               <ul>
                 <li>Everything in Free</li>
+                <li>Earn <strong>2% cashback</strong> at Preferred Partners (0.5% at Verified)</li>
                 <li>Access deals from <strong>10% off</strong> across restaurants, stores, activities &amp; events</li>
                 <li>Table reservations at partner restaurants</li>
                 <li>Access to exclusive events, invites &amp; premieres</li>
-                <li>Free access to the <strong>Brefnew App</strong></li>
                 <li>Member-only flash offers</li>
               </ul>
               <div className="mtc-roi">📈 Pays for itself after just 2 restaurant visits</div>
-              <a href="#contact" className="btn btn-primary mtc-btn">Get Gold →</a>
+              {/* <a href="#contact" className="btn btn-primary mtc-btn">Get Premium →</a> */}
             </div>
 
             <div className="mtc-card platinum">
               <div className="mtc-price-row">
-                <div className="mtc-badge">💎 Platinum</div>
+                <div className="mtc-badge">🖤 Black</div>
                 <div className="mtc-price">MUR 7,000 <span className="mtc-per">/year</span></div>
               </div>
               <div className="mtc-tagline">Maximum savings, maximum lifestyle</div>
               <ul>
-                <li>Everything in Gold</li>
-                <li>+10% <em>additional cashback</em> exclusively from PASSPRIVÉ on top of merchant deals</li>
+                <li>Everything in Premium</li>
+                <li>Earn <strong>4% cashback</strong>at Preferred Partners — the highest tier</li>
                 <li>Early access to new restaurants &amp; brand launches</li>
                 <li>Priority table booking &amp; concierge service</li>
-                <li>Exclusive Platinum-only member events</li>
+                <li>Exclusive Black-only member events</li>
                 <li>Dedicated support line</li>
               </ul>
               <div className="mtc-roi">💰 Members typically save MUR 20,000+ per year</div>
-              <a href="#contact" className="btn btn-primary mtc-btn mtc-btn-plat">Get Platinum →</a>
+              {/* <a href="#contact" className="btn btn-primary mtc-btn mtc-btn-plat">Get Black →</a> */}
             </div>
           </div>
-          <p className="mtc-footnote">* 10% additional cashback applied on selected PASSPRIVÉ partner transactions. Terms apply.</p>
+          <p className="mtc-footnote">* Cashback earned as points (1 point = MUR 1). Rates shown apply at Preferred Partners; all tiers earn 0.5% at Verified Pay Partners. Terms apply.</p>
         </div>
 
         <div className="page-actions">
