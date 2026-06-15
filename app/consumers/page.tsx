@@ -174,9 +174,8 @@ export default function ConsumersPage() {
               </div>
               <div className="mtc-tagline">The full lifestyle experience</div>
               <ul>
-                <li>Everything in Free</li>
+               
                 <li>Earn <strong>2% cashback</strong> at Preferred Partners (0.5% at Verified)</li>
-                <li>Access deals from <strong>10% off</strong> across restaurants, stores, activities &amp; events</li>
                 <li>Table reservations at partner restaurants</li>
                 <li>Access to exclusive events, invites &amp; premieres</li>
                 <li>Member-only flash offers</li>
@@ -192,8 +191,8 @@ export default function ConsumersPage() {
               </div>
               <div className="mtc-tagline">Maximum savings, maximum lifestyle</div>
               <ul>
-                <li>Everything in Premium</li>
-                <li>Earn <strong>4% cashback</strong>at Preferred Partners — the highest tier</li>
+               
+                <li>Earn <strong>4% cashback</strong> at Preferred Partners — the highest tier</li>
                 <li>Early access to new restaurants &amp; brand launches</li>
                 <li>Priority table booking &amp; concierge service</li>
                 <li>Exclusive Black-only member events</li>
