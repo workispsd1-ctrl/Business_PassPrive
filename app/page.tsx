@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { WaitlistButton } from '@/components/WaitlistButton';
 
 const audienceCards = [
   {
@@ -40,6 +41,7 @@ export default function HomePage() {
         <section id="hero">
           <div className="hero-content">
             <div className="hero-badge">🇲🇺 Made for Mauritius</div>
+            <WaitlistButton />
             <h1>
               The Lifestyle Platform<br />
               <em>Every Mauritian Deserves</em>

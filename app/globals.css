@@ -110,6 +110,68 @@ body {
 }
 
 /* ============================================
+   HERO WAITLIST CTA
+   ============================================ */
+.waitlist-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.waitlist-btn {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  cursor: pointer;
+  /* Bounce every ~2.4s, with the glow pulsing continuously underneath. */
+  animation: waitlistBounce 2.4s cubic-bezier(0.28, 0.84, 0.42, 1) infinite,
+    waitlistGlow 2.6s ease-in-out infinite;
+}
+
+.waitlist-btn:hover {
+  animation-play-state: paused;
+}
+
+@keyframes waitlistBounce {
+  0%, 55%, 100% { transform: translateY(0); }
+  62% { transform: translateY(-10px); }
+  70% { transform: translateY(0); }
+  76% { transform: translateY(-5px); }
+  82% { transform: translateY(0); }
+  88% { transform: translateY(-2px); }
+  94% { transform: translateY(0); }
+}
+
+@keyframes waitlistGlow {
+  0%, 100% { box-shadow: 0 4px 24px rgba(201, 168, 76, 0.4); }
+  50% { box-shadow: 0 6px 34px rgba(201, 168, 76, 0.65); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .waitlist-btn {
+    animation: waitlistGlow 2.6s ease-in-out infinite;
+  }
+}
+
+.waitlist-note {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--gold-light);
+  letter-spacing: 0.01em;
+  padding-left: 4px;
+}
+
+@media (max-width: 900px) {
+  .waitlist-cta {
+    align-items: center;
+  }
+  .waitlist-note {
+    padding-left: 0;
+  }
+}
+
+/* ============================================
    LAUNCH POPUP
    ============================================ */
 .launch-overlay {

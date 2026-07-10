@@ -4,6 +4,13 @@ import { useEffect, useRef, useState } from 'react';
 
 const STORAGE_KEY = 'passprive_launch_popup_seen';
 
+// Fire this event on `window` to open the launch popup from anywhere.
+export const OPEN_EVENT = 'passprive:open-waitlist';
+
+export function openLaunchPopup() {
+  window.dispatchEvent(new Event(OPEN_EVENT));
+}
+
 const audienceTypes = [
   { key: 'customer', label: "I'm a Customer", icon: '👤' },
   { key: 'merchant', label: "I'm a Merchant", icon: '🍽️' },
@@ -45,6 +52,19 @@ export function LaunchPopup() {
 
     const timer = window.setTimeout(() => setOpen(true), 900);
     return () => window.clearTimeout(timer);
+  }, []);
+
+  // Allow other components (e.g. the hero "Join Early Waitlist" button) to open
+  // this same popup on demand, resetting it back to the form view.
+  useEffect(() => {
+    const openOnDemand = () => {
+      setEndState(null);
+      setErrorVisible(false);
+      setPhoneError(false);
+      setOpen(true);
+    };
+    window.addEventListener(OPEN_EVENT, openOnDemand);
+    return () => window.removeEventListener(OPEN_EVENT, openOnDemand);
   }, []);
 
   // Lock body scroll while the popup is open, and allow Esc to close.

@@ -1,4 +1,4 @@
 {
-  "/api/launch-signup/route": "app/api/launch-signup/route.js",
+  "/corporates/page": "app/corporates/page.js",
   "/page": "app/page.js"
 }

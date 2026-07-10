@@ -11,10 +11,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/api/launch-signup/route": [
+    "/corporates/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/api/launch-signup/route.js"
+      "static/chunks/app/corporates/page.js"
     ]
   }
 }
