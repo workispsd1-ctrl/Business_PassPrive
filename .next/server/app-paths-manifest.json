@@ -1,3 +1,4 @@
 {
+  "/api/launch-signup/route": "app/api/launch-signup/route.js",
   "/page": "app/page.js"
 }

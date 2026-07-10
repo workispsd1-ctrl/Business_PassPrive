@@ -2,17 +2,35 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-// Google Apps Script Web App URL that appends submissions to the Google Sheet.
-// Set NEXT_PUBLIC_LAUNCH_SHEET_URL in your environment (see components/launch-sheet.gs for setup).
-const SHEET_ENDPOINT = process.env.NEXT_PUBLIC_LAUNCH_SHEET_URL ?? '';
-
 const STORAGE_KEY = 'passprive_launch_popup_seen';
+
+const audienceTypes = [
+  { key: 'customer', label: "I'm a Customer", icon: '👤' },
+  { key: 'merchant', label: "I'm a Merchant", icon: '🍽️' },
+] as const;
+
+type AudienceType = (typeof audienceTypes)[number]['key'];
+
+// A valid phone has 7–15 digits (E.164 range), optionally prefixed with "+".
+function isValidPhone(raw: string): boolean {
+  const trimmed = raw.trim();
+  if (!/^\+?[\d\s()-]+$/.test(trimmed)) {
+    return false;
+  }
+  const digits = trimmed.replace(/\D/g, '');
+  return digits.length >= 7 && digits.length <= 15;
+}
+
+type EndState = 'success' | 'duplicate';
 
 export function LaunchPopup() {
   const [open, setOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [endState, setEndState] = useState<EndState | null>(null);
   const [errorVisible, setErrorVisible] = useState(false);
+  const [audience, setAudience] = useState<AudienceType>('customer');
+  const [phone, setPhone] = useState('');
+  const [phoneError, setPhoneError] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
   // Show once per browser, shortly after first load.
@@ -73,11 +91,20 @@ export function LaunchPopup() {
       return;
     }
 
+    // Validate the phone before sending; flag the field in red if it's off.
+    if (!isValidPhone(phone)) {
+      setPhoneError(true);
+      formRef.current.querySelector<HTMLInputElement>('#launchPhone')?.focus();
+      return;
+    }
+    setPhoneError(false);
+
     const data = new FormData(formRef.current);
     const payload = {
       name: (data.get('name') as string)?.trim() ?? '',
-      phone: (data.get('phone') as string)?.trim() ?? '',
+      phone: phone.trim(),
       email: (data.get('email') as string)?.trim() ?? '',
+      type: audience === 'merchant' ? 'Merchant' : 'Customer',
       submitted_at: new Date().toLocaleString(),
       source: typeof window !== 'undefined' ? window.location.pathname : '',
     };
@@ -85,22 +112,19 @@ export function LaunchPopup() {
     setSubmitting(true);
 
     try {
-      if (SHEET_ENDPOINT) {
-        // Apps Script Web Apps don't send CORS headers, so we fire the request
-        // with no-cors and a text/plain body to avoid a preflight. We can't read
-        // the response, but the row is written server-side.
-        await fetch(SHEET_ENDPOINT, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-          body: JSON.stringify(payload),
-        });
-      } else {
-        console.warn('NEXT_PUBLIC_LAUNCH_SHEET_URL is not set — submission was not saved.');
+      const response = await fetch('/api/launch-signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = (await response.json().catch(() => ({}))) as { result?: string };
+
+      if (!response.ok || result.result === 'error') {
+        throw new Error('Submission failed');
       }
 
       markSeen();
-      setSubmitted(true);
+      setEndState(result.result === 'duplicate' ? 'duplicate' : 'success');
     } catch (error) {
       console.error('Launch signup failed:', error);
       setErrorVisible(true);
@@ -120,7 +144,7 @@ export function LaunchPopup() {
           <i className="fas fa-xmark" />
         </button>
 
-        {!submitted ? (
+        {!endState ? (
           <>
             <div className="launch-badge">
               <span className="launch-dot" /> Launching Soon
@@ -135,6 +159,21 @@ export function LaunchPopup() {
             </p>
 
             <form className="launch-form" ref={formRef} onSubmit={handleSubmit}>
+              <div className="launch-toggle" role="group" aria-label="I am a">
+                {audienceTypes.map((option) => (
+                  <button
+                    key={option.key}
+                    type="button"
+                    className={`launch-toggle-btn ${audience === option.key ? 'selected' : ''}`}
+                    aria-pressed={audience === option.key}
+                    onClick={() => setAudience(option.key)}
+                  >
+                    <span className="launch-toggle-icon">{option.icon}</span>
+                    {option.label}
+                  </button>
+                ))}
+              </div>
+
               <div className="form-group">
                 <label htmlFor="launchName">Your Name</label>
                 <input id="launchName" type="text" name="name" placeholder="Bruno Martins" required />
@@ -142,7 +181,26 @@ export function LaunchPopup() {
 
               <div className="form-group">
                 <label htmlFor="launchPhone">Phone Number</label>
-                <input id="launchPhone" type="tel" name="phone" placeholder="+230 5xxx xxxx" required />
+                <input
+                  id="launchPhone"
+                  type="tel"
+                  name="phone"
+                  className={phoneError ? 'input-error' : ''}
+                  placeholder="+230 5xxx xxxx"
+                  value={phone}
+                  onChange={(event) => {
+                    setPhone(event.target.value);
+                    if (phoneError) {
+                      setPhoneError(!isValidPhone(event.target.value));
+                    }
+                  }}
+                  onBlur={(event) => setPhoneError(event.target.value.trim() !== '' && !isValidPhone(event.target.value))}
+                  aria-invalid={phoneError}
+                  required
+                />
+                {phoneError && (
+                  <span className="input-error-text">Please enter a valid phone number (7–15 digits).</span>
+                )}
               </div>
 
               <div className="form-group">
@@ -166,15 +224,25 @@ export function LaunchPopup() {
         ) : (
           <div className="launch-thanks">
             <div className="launch-check">
-              <i className="fas fa-check" />
+              <i className={endState === 'duplicate' ? 'fas fa-clock' : 'fas fa-check'} />
             </div>
-            <h2 className="launch-title">
-              You're On The List!
-            </h2>
-            <p className="launch-intro">
-              Thank you — your spot is reserved. We'll reach out the moment PASSPRIVÉ launches
-              with your exclusive founding-member deal. Welcome to the privé.
-            </p>
+            {endState === 'duplicate' ? (
+              <>
+                <h2 className="launch-title">You're Already In!</h2>
+                <p className="launch-intro">
+                  We already have your details — thank you! Sit tight; we'll get back to you the
+                  moment PASSPRIVÉ launches with your exclusive founding-member deal.
+                </p>
+              </>
+            ) : (
+              <>
+                <h2 className="launch-title">You're On The List!</h2>
+                <p className="launch-intro">
+                  Thank you — your spot is reserved. We'll reach out the moment PASSPRIVÉ launches
+                  with your exclusive founding-member deal. Welcome to the privé.
+                </p>
+              </>
+            )}
             <button type="button" className="btn btn-primary btn-full" onClick={close}>
               Explore in the meantime →
             </button>

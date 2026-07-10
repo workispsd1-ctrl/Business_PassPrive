@@ -236,9 +236,59 @@ body {
   margin-top: 6px;
 }
 
+.launch-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.launch-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 10px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.75);
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.launch-toggle-btn:hover {
+  border-color: rgba(201, 168, 76, 0.4);
+  color: var(--white);
+}
+
+.launch-toggle-btn.selected {
+  border-color: rgba(201, 168, 76, 0.7);
+  background: rgba(201, 168, 76, 0.14);
+  color: var(--gold-light);
+}
+
+.launch-toggle-icon {
+  font-size: 1.05rem;
+}
+
 .launch-optional {
   font-weight: 500;
   color: rgba(255, 255, 255, 0.4);
+}
+
+.launch-form input.input-error,
+.launch-form input.input-error:focus {
+  border-color: rgba(220, 38, 38, 0.85);
+  background: rgba(220, 38, 38, 0.08);
+}
+
+.input-error-text {
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: #FCA5A5;
 }
 
 .launch-msg {

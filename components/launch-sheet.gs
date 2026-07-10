@@ -22,6 +22,10 @@
  *    - On Vercel: Project → Settings → Environment Variables, then redeploy.
  *
  * The first row of headers is created automatically on the first submission.
+ * Duplicate phone numbers (or emails) are detected and skipped automatically.
+ *
+ * NOTE: If you edit this script later, you must redeploy a NEW VERSION:
+ *   Deploy → Manage deployments → (edit) → Version: New version → Deploy.
  */
 
 function doPost(e) {
@@ -33,7 +37,7 @@ function doPost(e) {
 
     // Ensure header row exists.
     if (sheet.getLastRow() === 0) {
-      sheet.appendRow(['Timestamp', 'Name', 'Phone', 'Email', 'Source Page']);
+      sheet.appendRow(['Timestamp', 'Name', 'Phone', 'Email', 'Type', 'Source Page']);
     }
 
     var data = {};
@@ -43,11 +47,30 @@ function doPost(e) {
       data = e.parameter || {};
     }
 
+    // Duplicate check: skip if this phone (or email, if given) is already on the list.
+    var newPhone = normalize_(data.phone);
+    var newEmail = normalize_(data.email);
+    if (sheet.getLastRow() > 1) {
+      var rows = sheet.getRange(2, 1, sheet.getLastRow() - 1, sheet.getLastColumn()).getValues();
+      for (var i = 0; i < rows.length; i++) {
+        var existingPhone = normalize_(rows[i][2]); // Phone column
+        var existingEmail = normalize_(rows[i][3]); // Email column
+        var phoneMatch = newPhone && existingPhone === newPhone;
+        var emailMatch = newEmail && existingEmail === newEmail;
+        if (phoneMatch || emailMatch) {
+          return ContentService
+            .createTextOutput(JSON.stringify({ result: 'duplicate' }))
+            .setMimeType(ContentService.MimeType.JSON);
+        }
+      }
+    }
+
     sheet.appendRow([
       data.submitted_at || new Date().toLocaleString(),
       data.name || '',
       data.phone || '',
       data.email || '',
+      data.type || '',
       data.source || '',
     ]);
 
@@ -61,6 +84,12 @@ function doPost(e) {
   } finally {
     lock.releaseLock();
   }
+}
+
+// Normalizes a value for duplicate comparison: lowercased, digits/letters only.
+function normalize_(value) {
+  if (value === null || value === undefined) return '';
+  return String(value).toLowerCase().replace(/[^a-z0-9]/g, '');
 }
 
 // Lets you open the /exec URL in a browser to confirm the app is live.
