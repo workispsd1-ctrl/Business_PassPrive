@@ -30,8 +30,7 @@ export function SiteHeader() {
     <nav id="navbar">
       <div className="nav-inner">
         <Link href="/" className="logo" aria-label="PassPrivé home">
-          <Image src={logoSrc} alt="PASSPRIVÉ logo" className="logo-mark" width={50} height={50} priority />
-          <span className="logo-text">PASSPRIVÉ</span>
+          <Image src={logoSrc} alt="PASSPRIVÉ" className="logo-mark" width={2400} height={800} priority />
         </Link>
 
         <ul className={`nav-links ${mobileOpen ? 'mobile-open' : ''}`} id="mainNav">

@@ -132,6 +132,10 @@ export function ContactForm() {
             </div>
           </form>
         </div>
+
+        <p className="contact-phone">
+          Prefer to talk? Call us on <a href="tel:+23055008521">+230 5500 8521</a>
+        </p>
       </div>
     </section>
   );

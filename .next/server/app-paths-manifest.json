@@ -1,1 +1,8 @@
-{}
+{
+  "/page": "app/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/banks/page": "app/banks/page.js",
+  "/platforms/page": "app/platforms/page.js",
+  "/corporates/page": "app/corporates/page.js",
+  "/about/page": "app/about/page.js"
+}

@@ -1,4 +1,7 @@
+import Image from 'next/image';
 import Link from 'next/link';
+
+const logoSrc = '/images/Logo.png';
 
 export function SiteFooter() {
   return (
@@ -6,8 +9,17 @@ export function SiteFooter() {
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand">
-            <div className="footer-logo">PASSPRIVÉ</div>
+            <Image src={logoSrc} alt="PASSPRIVÉ" className="footer-logo" width={2400} height={800} />
             <p>Mauritius' Lifestyle Membership Platform.<br />Discover • Book • Pay • Repeat.</p>
+            <div className="footer-contact">
+              <div className="footer-contact-label">Call Us</div>
+              <a className="footer-phone" href="tel:+23055008521">
+                <span className="footer-phone-icon" aria-hidden="true">
+                  <i className="fas fa-phone" />
+                </span>
+                <span className="footer-phone-number">+230 5500 8521</span>
+              </a>
+            </div>
           </div>
 
           <div className="footer-links">
