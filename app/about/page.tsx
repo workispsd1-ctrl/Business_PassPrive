@@ -43,12 +43,9 @@ export default function AboutPage() {
               <div className="team-info">
                 <div className="team-role">Chief Business Officer</div>
                 <h3>Bruno Rochecouste</h3>
-                <p>Bruno brings extensive leadership experience across banking, insurance, and hospitality.</p>
+                <p>Bruno is a commercial and transformation executive with decades of leadership experience across Mauritius, South Africa, and the Middle East. He brings a broad international perspective together with a deep understanding of commercial strategy, customer experience, and organizational transformation.</p>
                 <p>
-                  He has held senior roles including CEO, Chief Commercial Officer, and Executive Director across
-                  Mauritius, South Africa, and the Middle East. Most recently, he served as Regional Sales &amp; Business
-                  Development Manager for Holiday Inn in Mauritius. At PASSPRIVÉ, he leads commercial strategy,
-                  partnerships, and market expansion.
+                 At PASSPRIVÉ, he leads commercial strategy, partnerships, and market expansion.
                 </p>
               </div>
             </article>
