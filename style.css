@@ -1511,7 +1511,7 @@ p  { line-height: 1.75; color: var(--text-muted); }
   border-radius: 100px;
   white-space: nowrap;
 }
-.mtc-badge { font-size: 1.4rem; font-family: var(--font-serif); margin-bottom: 4px; }
+.mtc-badge { font-size: 1.05rem; font-family: var(--font-serif); margin-bottom: 4px; }
 .mtc-tagline { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 20px; }
 .mtc-card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 .mtc-card ul li { position: relative; padding-left: 20px; font-size: 0.86rem; line-height: 1.5; }
@@ -2019,6 +2019,13 @@ p  { line-height: 1.75; color: var(--text-muted); }
   font-size: 0.72rem;
   font-weight: 500;
   color: var(--text-muted);
+}
+.mtc-old-price {
+  text-decoration: line-through;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.82em;
+  margin-right: 3px;
 }
 .mtc-card.free { background: var(--white); border-color: var(--border); }
 .mtc-card.free .mtc-price { color: var(--text-muted); font-size: 1rem; }

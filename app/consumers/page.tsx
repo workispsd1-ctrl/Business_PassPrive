@@ -15,7 +15,7 @@ export default function ConsumersPage() {
               <div className="c-screen">
                 <div className="c-topbar">
                   <span>PASSPRIVÉ</span>
-                  <div className="c-gold-badge">Premium</div>
+                  <div className="c-gold-badge">Privé Plus</div>
                 </div>
                 <div className="c-explore">
                   <div className="c-explore-title">Explore Near You</div>
@@ -97,8 +97,8 @@ export default function ConsumersPage() {
             </div>
             <div className="smb-op">×</div>
             <div className="smb-step">
-              <div className="smb-val">4%</div>
-              <div className="smb-desc">Black member cashback rate</div>
+              <div className="smb-val">3%</div>
+              <div className="smb-desc">Privé Black member cashback rate</div>
             </div>
             <div className="smb-op">×</div>
             <div className="smb-step">
@@ -107,7 +107,7 @@ export default function ConsumersPage() {
             </div>
             <div className="smb-op">=</div>
             <div className="smb-step smb-result">
-              <div className="smb-val">MUR 4,800</div>
+              <div className="smb-val">MUR 3,600</div>
               <div className="smb-desc">Cashback points earned per year</div>
             </div>
           </div>
@@ -122,9 +122,9 @@ export default function ConsumersPage() {
           <div className="cr-table">
             <div className="cr-row cr-head">
               <div className="cr-cell cr-partner">Partner type</div>
-              <div className="cr-cell">🆓 Free</div>
-              <div className="cr-cell">⭐ Premium</div>
-              <div className="cr-cell">🖤 Black</div>
+              <div className="cr-cell">🆓 Privé Free</div>
+              <div className="cr-cell">⭐ Privé Plus</div>
+              <div className="cr-cell">🖤 Privé Black</div>
             </div>
             <div className="cr-row">
               <div className="cr-cell cr-partner">
@@ -141,8 +141,8 @@ export default function ConsumersPage() {
                 <span>Higher cashback that scales with your tier</span>
               </div>
               <div className="cr-cell cr-rate">0.5%</div>
-              <div className="cr-cell cr-rate cr-rate-up">2%</div>
-              <div className="cr-cell cr-rate cr-rate-up">4%</div>
+              <div className="cr-cell cr-rate cr-rate-up">1.5%</div>
+              <div className="cr-cell cr-rate cr-rate-up">3%</div>
             </div>
           </div>
           <p className="cr-footnote">Cashback at Preferred Partners may include merchant-funded rewards credited instantly to your account. Use these credits within <strong>14 days</strong> (1 point = MUR 1).</p>
@@ -153,7 +153,7 @@ export default function ConsumersPage() {
           <div className="mtc-grid mtc-grid-3">
             <div className="mtc-card free">
               <div className="mtc-price-row">
-                <div className="mtc-badge">🆓 Free</div>
+                <div className="mtc-badge">🆓 Privé Free</div>
                 <div className="mtc-price">MUR 0</div>
               </div>
               <div className="mtc-tagline">Discover what Mauritius has to offer</div>
@@ -169,37 +169,37 @@ export default function ConsumersPage() {
             <div className="mtc-card gold">
               <div className="mtc-popular-tag">⭐ Best Value</div>
               <div className="mtc-price-row">
-                <div className="mtc-badge">⭐ Premium</div>
-                <div className="mtc-price">MUR 4,000 <span className="mtc-per">/year</span></div>
+                <div className="mtc-badge">⭐ Privé Plus</div>
+                <div className="mtc-price"><span className="mtc-old-price">MUR 6,000</span> MUR 4,000 <span className="mtc-per">/year</span></div>
               </div>
               <div className="mtc-tagline">The full lifestyle experience</div>
               <ul>
                
-                <li>Earn <strong>2% cashback</strong> at Preferred Partners (0.5% at Verified)</li>
+                <li>Earn <strong>1.5% cashback</strong> at Preferred Partners (0.5% at Verified)</li>
                 <li>Table reservations at partner restaurants</li>
                 <li>Access to exclusive events, invites &amp; premieres</li>
                 <li>Member-only flash offers</li>
               </ul>
               <div className="mtc-roi">📈 Pays for itself after just 2 restaurant visits</div>
-              {/* <a href="#contact" className="btn btn-primary mtc-btn">Get Premium →</a> */}
+              {/* <a href="#contact" className="btn btn-primary mtc-btn">Get Privé Plus →</a> */}
             </div>
 
             <div className="mtc-card platinum">
               <div className="mtc-price-row">
-                <div className="mtc-badge">🖤 Black</div>
-                <div className="mtc-price">MUR 7,000 <span className="mtc-per">/year</span></div>
+                <div className="mtc-badge">🖤 Privé Black</div>
+                <div className="mtc-price"><span className="mtc-old-price">MUR 9,000</span> MUR 7,000 <span className="mtc-per">/year</span></div>
               </div>
               <div className="mtc-tagline">Maximum savings, maximum lifestyle</div>
               <ul>
                
-                <li>Earn <strong>4% cashback</strong> at Preferred Partners — the highest tier</li>
+                <li>Earn <strong>3% cashback</strong> at Preferred Partners — the highest tier</li>
                 <li>Early access to new restaurants &amp; brand launches</li>
                 <li>Priority table booking &amp; concierge service</li>
                 <li>Exclusive Black-only member events</li>
                 <li>Dedicated support line</li>
               </ul>
               <div className="mtc-roi">💰 Members typically save MUR 20,000+ per year</div>
-              {/* <a href="#contact" className="btn btn-primary mtc-btn mtc-btn-plat">Get Black →</a> */}
+              {/* <a href="#contact" className="btn btn-primary mtc-btn mtc-btn-plat">Get Privé Black →</a> */}
             </div>
           </div>
           <p className="mtc-footnote">* Cashback earned as points (1 point = MUR 1). Rates shown apply at Preferred Partners; all tiers earn 0.5% at Verified Pay Partners. Terms apply.</p>

@@ -26,7 +26,7 @@ export default function BanksPage() {
             <div className="bank-card"><div className="bank-card-icon"><i className="fas fa-hand-holding-usd" /></div><h3>BNPL &amp; Consumer Lending</h3><p>Embedded Buy Now Pay Later for lifestyle purchases. Drive consumer finance uptake through the PASSPRIVÉ marketplace — natural credit touchpoints at the moment of desire.</p></div>
             <div className="bank-card"><div className="bank-card-icon"><i className="fas fa-coins" /></div><h3>Loyalty Points Engine</h3><p>Integrate your points currency into the PASSPRIVÉ ecosystem. Members earn and burn points on dining, shopping and experiences — creating a powerful retention loop.</p></div>
             <div className="bank-card"><div className="bank-card-icon"><i className="fas fa-chart-pie" /></div><h3>Rich Spend Data</h3><p>Understand where, when and how your customers spend on lifestyle. First-party data that powers better offers, personalised products and smarter risk modelling.</p></div>
-            <div className="bank-card"><div className="bank-card-icon"><i className="fas fa-star" /></div><h3>Premium Card Positioning</h3><p>Bundle PASSPRIVÉ Gold or Platinum membership with your premium card products. A tangible, daily-use benefit that justifies annual fees and drives upgrades.</p></div>
+            <div className="bank-card"><div className="bank-card-icon"><i className="fas fa-star" /></div><h3>Premium Card Positioning</h3><p>Bundle PASSPRIVÉ Privé Plus or Privé Black membership with your premium card products. A tangible, daily-use benefit that justifies annual fees and drives upgrades.</p></div>
           </div>
         </div>
 

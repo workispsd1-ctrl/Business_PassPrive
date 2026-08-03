@@ -70,7 +70,7 @@ export default function HomePage() {
               <div className="phone-screen">
                 <div className="app-header">
                   <span className="app-greeting">Welcome back, <strong>Kavita</strong> 👋</span>
-                  <div className="app-badge-gold">GOLD MEMBER</div>
+                  <div className="app-badge-gold">PRIVÉ BLACK</div>
                 </div>
                 <div className="app-balance">
                   <span className="balance-label">💰 Benefits received this year</span>
