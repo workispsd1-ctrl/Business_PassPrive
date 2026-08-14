@@ -42,6 +42,11 @@ export function LaunchPopup() {
 
   // Show once per browser, shortly after first load.
   useEffect(() => {
+    // /onboarding pops its own login modal — don't stack this on top of it.
+    if (window.location.pathname.startsWith('/onboarding')) {
+      return;
+    }
+
     try {
       if (localStorage.getItem(STORAGE_KEY)) {
         return;
