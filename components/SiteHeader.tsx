@@ -8,15 +8,19 @@ import { useEffect, useState } from 'react';
 const logoSrc = '/images/Logo.png';
 
 const navItems = [
-  { href: '/about', label: 'About The Team' },
+  { href: '/about', label: 'About Us' },
   { href: '/mission', label: 'Vision & Mission' },
   { href: '/consumers', label: 'Consumers' },
   { href: '/merchants', label: 'Merchants' },
   { href: '/corporates', label: 'Corporates' },
-  { href: '/banks', label: 'Banks/Financial Institutions' },
+  { href: '/banks', label: 'Institutions' },
   { href: '/platforms', label: 'Platforms' },
-  { href: '/contact', label: 'Partner With Us', cta: true },
 ];
+
+const ctaItem = { href: '/contact', label: 'Partner With Us' };
+
+// Routes that use the light page design get the light header.
+const lightRoutes = new Set(['/', '/about']);
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -27,7 +31,7 @@ export function SiteHeader() {
   }, [pathname]);
 
   return (
-    <nav id="navbar">
+    <nav id="navbar" className={lightRoutes.has(pathname) ? 'nav-light' : undefined}>
       <div className="nav-inner">
         <Link href="/" className="logo" aria-label="PassPrivé home">
           <Image src={logoSrc} alt="PASSPRIVÉ" className="logo-mark" width={2400} height={800} priority />
@@ -38,7 +42,6 @@ export function SiteHeader() {
             <li key={item.href}>
               <Link
                 href={item.href}
-                className={item.cta ? 'nav-cta' : ''}
                 aria-current={pathname === item.href ? 'page' : undefined}
                 onClick={() => setMobileOpen(false)}
               >
@@ -46,7 +49,20 @@ export function SiteHeader() {
               </Link>
             </li>
           ))}
+          <li className="nav-cta-mobile">
+            <Link href={ctaItem.href} className="nav-cta" onClick={() => setMobileOpen(false)}>
+              {ctaItem.label}
+            </Link>
+          </li>
         </ul>
+
+        <Link
+          href={ctaItem.href}
+          className="nav-cta nav-cta-desktop"
+          aria-current={pathname === ctaItem.href ? 'page' : undefined}
+        >
+          {ctaItem.label}
+        </Link>
 
         <button
           type="button"

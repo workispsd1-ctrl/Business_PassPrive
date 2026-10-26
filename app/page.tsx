@@ -1,222 +1,217 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { WaitlistButton } from '@/components/WaitlistButton';
 
-const audienceCards = [
+const categories = [
+  { label: 'Dining', icon: 'fa-utensils' },
+  { label: 'Retail', icon: 'fa-tag' },
+  { label: 'Hotels', icon: 'fa-bed' },
+  { label: 'Experiences', icon: 'fa-masks-theater' },
+  { label: 'Payments', icon: 'fa-credit-card' },
+  { label: 'Loyalty', icon: 'fa-gift' },
+] as const;
+
+const problems = [
   {
-    href: '/consumers',
-    label: 'Consumers',
-    title: 'Discover, book, pay, and save.',
-    description: 'A single membership that surfaces the best dining, retail, hotel, and experience offers across Mauritius.',
+    tone: 'navy',
+    icon: '/images/icon-consumers.png',
+    title: 'Consumers',
+    lead: 'Looking for handpicked deals, easy discovery, and smooth payments,',
+    rest: 'without having to hunt through chats and calls.',
   },
   {
-    href: '/merchants',
-    label: 'Merchants',
-    title: 'Fill tables and build loyalty.',
-    description: 'Booking, QR menus, ordering, promotions, and analytics without extra tech overhead.',
+    tone: 'orange',
+    icon: '/images/icon-merchants.png',
+    title: 'Merchants',
+    lead: 'Struggling with unpredictable customer crowds, empty tables during slow hours,',
+    rest: 'and no digital way to keep customers coming back.',
   },
   {
-    href: '/corporates',
-    label: 'Corporates',
-    title: 'High-value perks employees use.',
-    description: 'A premium benefits layer for staff rewards, customer gifts, and simple corporate administration.',
+    tone: 'blue',
+    icon: '/images/icon-corporates.png',
+    title: 'Corporates',
+    lead: 'Looking for high-value perks for your staff and rewards for your customers,',
+    rest: 'without the heavy administrative hassle.',
   },
   {
-    href: '/banks',
-    label: 'Banks',
-    title: 'Turn the app into a daily habit.',
-    description: 'A plug-and-play lifestyle marketplace that drives engagement, card usage, and loyalty.',
+    tone: 'light',
+    icon: '/images/icon-banks.png',
+    title: 'Banks & Financial Institutions',
+    lead: 'Want daily app use, card transactions, and customer loyalty,',
+    rest: 'even though most banking apps are only opened once a month.',
   },
+] as const;
+
+const pillars = [
+  { label: 'App-first experience', icon: 'fa-mobile-screen' },
+  { label: 'Plug-and-play for partners', icon: 'fa-plug' },
+  { label: 'Real-time analytics dashboard', icon: 'fa-arrow-trend-up' },
+  { label: 'Zero tech investment required', icon: 'fa-shield-halved' },
+] as const;
+
+// The corporates and banks photos already have their caption baked into the artwork.
+const audiences = [
+  { key: 'merchants', href: '/merchants', label: 'Merchants', photo: '/images/ecosystem-merchants.png', captioned: false },
+  { key: 'consumers', href: '/consumers', label: 'Consumers', photo: '/images/ecosystem-consumers.png', captioned: false },
+  { key: 'corporates', href: '/corporates', label: 'Corporates', photo: '/images/ecosystem-corporates.png', captioned: true },
+  { key: 'banks', href: '/banks', label: 'Bank & Financial Institutions', photo: '/images/ecosystem-banks.png', captioned: true },
+] as const;
+
+const numbers = [
+  { value: '1.4M', label: 'Population ready for a lifestyle platform', tone: 'navy' },
+  { value: 'MUR 65M', label: 'Projected ecosystem value in Year 1', tone: 'accent' },
+  { value: '50K+', label: 'Active marketplace users projected - Year 1', tone: 'plain' },
+  { value: '200+', label: 'Merchant categories - dining, retail, hotels, experiences', tone: 'orange' },
+  { value: '0', label: 'Tech investment required from partners', tone: 'blue' },
+  { value: '48hrs', label: 'Average merchant onboarding time', tone: 'plain' },
 ] as const;
 
 export default function HomePage() {
   return (
     <>
-      <div id="hero-wrapper">
-        <div className="hero-bg-shapes">
-          <div className="shape shape-1" />
-          <div className="shape shape-2" />
-          <div className="shape shape-3" />
-        </div>
+      <div id="hero-wrapper" className="hx-hero-wrapper">
 
-        <section id="hero">
-          <div className="hero-content">
-            <div className="hero-badge">🇲🇺 Made for Mauritius</div>
-            <WaitlistButton />
-            <h1>
-              The Lifestyle Platform<br />
-              <em>Every Mauritian Deserves</em>
-            </h1>
-            <p className="hero-sub">
-              PASSPRIVÉ connects consumers, merchants, corporates, and banks and financial institutions inside one
-              beautifully simple lifestyle super-app - driving discovery, bookings, loyalty, and payments.
-            </p>
-            <div className="hero-pills">
-              <span className="pill">🍽️ Dining</span>
-              <span className="pill">🛍️ Retail</span>
-              <span className="pill">🏨 Hotels</span>
-              <span className="pill">🎭 Experiences</span>
-              <span className="pill">💳 Payments</span>
-              <span className="pill">🎁 Loyalty</span>
-            </div>
-            <div className="hero-ctas">
-              <Link href="/merchants" className="btn btn-primary">I'm a Merchant</Link>
-              <Link href="/corporates" className="btn btn-secondary">I'm a Corporate</Link>
-              <Link href="/banks" className="btn btn-secondary">I'm a Bank/Financial Institution</Link>
-            </div>
+        <section id="hero" className="hx-hero">
+          <div className="hx-pills" aria-label="What Passprivé covers">
+            <span className="hx-pill hx-pill-origin">
+              <span className="hx-flag" aria-hidden="true"><i /><i /><i /><i /></span>
+              Made For Mauritius
+            </span>
+            {categories.map((item) => (
+              <span key={item.label} className="hx-pill">
+                <i className={`fas ${item.icon}`} aria-hidden="true" />
+                {item.label}
+              </span>
+            ))}
           </div>
 
-          <div className="hero-visual">
-            <div className="phone-mockup">
-              <div className="phone-screen">
-                <div className="app-header">
-                  <span className="app-greeting">Welcome back, <strong>Kavita</strong> 👋</span>
-                  <div className="app-badge-gold">PRIVÉ BLACK</div>
-                </div>
-                <div className="app-balance">
-                  <span className="balance-label">💰 Benefits received this year</span>
-                  <span className="balance-amount">MUR 3,840</span>
-                  <div className="balance-sub-row">
-                    <span className="balance-sub">🍽️ 12 dining visits saved</span>
-                    <span className="balance-sub-green">10× your membership</span>
-                  </div>
-                </div>
-                <div className="app-deals">
-                  <div className="deal-label">🔥 Today's Deals</div>
-                  <div className="deal-card">
-                    <div className="deal-icon">🍷</div>
-                    <div>
-                      <div className="deal-name">Le Chamarel</div>
-                      <div className="deal-off">20% OFF</div>
-                    </div>
-                  </div>
-                  <div className="deal-card">
-                    <div className="deal-icon">☕</div>
-                    <div>
-                      <div className="deal-name">Cafe Lux</div>
-                      <div className="deal-off">Free Coffee</div>
-                    </div>
-                  </div>
-                  <div className="deal-card">
-                    <div className="deal-icon">🛍️</div>
-                    <div>
-                      <div className="deal-name">Kaz Kazini</div>
-                      <div className="deal-off">15% OFF</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="app-tabs">
-                  <span className="tab active"><i className="fas fa-home" /></span>
-                  <span className="tab"><i className="fas fa-search" /></span>
-                  <span className="tab"><i className="fas fa-calendar" /></span>
-                  <span className="tab"><i className="fas fa-user" /></span>
-                </div>
+          <div className="hx-grid">
+            <div className="hx-content">
+              <h1 className="hx-title">
+                One App.
+                <em>Every Mauritian<br />Lifestyle.</em>
+              </h1>
+              <p className="hx-sub">
+                Unifying consumers, merchants, and financial networks to power seamless discovery, rewards, and
+                payments.
+              </p>
+              <div className="hx-audiences">
+                <Link href="/merchants" className="hx-audience is-active">I&apos;m a Merchant</Link>
+                <Link href="/corporates" className="hx-audience">I&apos;m a Corporate</Link>
+                <Link href="/banks" className="hx-audience">I&apos;m a Bank/Financial Institution</Link>
               </div>
+              <WaitlistButton />
             </div>
-            <div className="hero-stats">
-              <div className="stat-bubble stat-1">
-                <span className="stat-num">50K+</span>
-                <span className="stat-label">Active Users</span>
+
+            <div className="hx-visual">
+              <div className="hx-phone-clip">
+                <Image
+                  src="/images/home-hero-phone.png"
+                  alt="Passprivé app showing PrivéPlus cashback, savings and stamp rewards"
+                  width={2064}
+                  height={2412}
+                  sizes="(max-width: 900px) 80vw, 460px"
+                  className="hx-phone-img"
+                  priority
+                />
               </div>
-              <div className="stat-bubble stat-2">
-                <span className="stat-num">MUR 65M</span>
-                <span className="stat-label">Ecosystem Value</span>
-              </div>
-              <div className="stat-bubble stat-3">
-                <span className="stat-num">200+</span>
-                <span className="stat-label">Merchant Partners</span>
+
+              <div className="hx-stats">
+                <div className="hx-stat"><span className="hx-stat-num">50K+</span><span className="hx-stat-label">Active Users</span></div>
+                <div className="hx-stat"><span className="hx-stat-num">200+</span><span className="hx-stat-label">Merchant Partners</span></div>
+                <div className="hx-stat"><span className="hx-stat-num">MUR 65M</span><span className="hx-stat-label">Ecosystem Value</span></div>
               </div>
             </div>
           </div>
         </section>
       </div>
 
-      <section id="problem" className="section-gap">
+      <section id="problem" className="hx-section hx-problem">
         <div className="container">
-          <div className="section-label">The Mauritius Reality</div>
-          <h2 className="section-title">
-            A Lifestyle Economy That's<br />
-            <em>Still Running on WhatsApp</em>
+          <div className="hx-label">The Mauritius Reality</div>
+          <h2 className="hx-section-title">
+            A Lifestyle Economy<br />
+            That&apos;s Still Running on <em>WhatsApp.</em>
           </h2>
-          <div className="problem-grid">
-            <div className="problem-card">
-              <div className="problem-icon">👩‍💼</div>
-              <h3>Consumers</h3>
-              <p>Want curated value, easy discovery and seamless payments - but deals are scattered across chats and calls.</p>
-            </div>
-            <div className="problem-card">
-              <div className="problem-icon">🍽️</div>
-              <h3>Merchants</h3>
-              <p>Struggle with unpredictable footfall, empty tables at off-peak hours, and zero digital loyalty tools.</p>
-            </div>
-            <div className="problem-card">
-              <div className="problem-icon">🏢</div>
-              <h3>Corporates</h3>
-              <p>Need high-perceived-value benefits for staff and customer rewards without admin-heavy programs.</p>
-            </div>
-            <div className="problem-card">
-              <div className="problem-icon">🏦</div>
-              <h3>Banks & Financial Institutions</h3>
-              <p>Want daily app engagement, card usage, and loyalty - but most banking apps are used once a month.</p>
+          <div className="hx-problem-grid">
+            {problems.map((item) => (
+              <article key={item.title} className={`hx-pcard is-${item.tone}`}>
+                <Image src={item.icon} alt="" width={56} height={56} className="hx-pcard-icon" />
+                <h3>{item.title}</h3>
+                <p><span className="hx-hl">{item.lead}</span> {item.rest}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="solution" className="hx-section hx-solution">
+        <div className="container hx-solution-grid">
+          <div className="hx-solution-text">
+            <div className="hx-label">One Platform. Four Audiences.</div>
+            <h2 className="hx-section-title">
+              Passprivé is the<br />
+              <span className="hx-serif">Missing Link</span>
+            </h2>
+            <ul className="hx-pillars">
+              {pillars.map((item) => (
+                <li key={item.label}>
+                  <span className="hx-pillar-icon"><i className={`fas ${item.icon}`} aria-hidden="true" /></span>
+                  {item.label}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="hx-solution-visual">
+            <p className="hx-solution-desc">
+              We built one simple platform that brings everyone together: consumers discover and save, merchants
+              fill empty tables and build loyalty, companies reward their teams, and banks drive daily use.
+            </p>
+            <div className="hx-eco">
+              {audiences.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`hx-eco-tile is-${item.key}`}
+                  aria-label={item.label}
+                >
+                  <Image src={item.photo} alt="" fill sizes="(max-width: 900px) 50vw, 400px" className="hx-eco-photo" />
+                  {!item.captioned && <span className="hx-eco-label">{item.label}</span>}
+                </Link>
+              ))}
+              <span className="hx-eco-hub" aria-hidden="true">
+                <Image src="/images/logo-badge.png" alt="" width={84} height={84} />
+              </span>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="solution" className="section-gap section-dark">
-        <div className="container">
-          <div className="solution-inner">
-            <div className="solution-text">
-              <div className="section-label light">One Platform. Four Audiences.</div>
-              <h2 className="section-title light">
-                PASSPRIVÉ is the<br />
-                <em>Missing Link</em>
-              </h2>
-              <p className="solution-desc">
-                We built a single, beautifully simple platform that solves the lifestyle gap for everyone at once.
-                Consumers discover and save. Merchants fill tables and build loyalty. Corporates delight their teams.
-                Banks drive daily engagement.
-              </p>
-              <div className="solution-pillars">
-                <div className="pillar"><i className="fas fa-mobile-alt" /> <span>App-first experience</span></div>
-                <div className="pillar"><i className="fas fa-plug" /> <span>Plug-and-play for partners</span></div>
-                <div className="pillar"><i className="fas fa-chart-line" /> <span>Real-time analytics dashboard</span></div>
-                <div className="pillar"><i className="fas fa-shield-alt" /> <span>Zero tech investment required</span></div>
+      <section id="numbers" className="hx-section hx-numbers">
+        <div className="container hx-bento">
+          <div className="hx-bento-intro">
+            <h2>The Opportunity</h2>
+            <div className="hx-words" aria-label="Mauritius is ready. The numbers speak.">
+              <div><span className="hx-word is-dark">Mauritius</span></div>
+              <div>
+                <span className="hx-word is-dark">Is</span>
+                <span className="hx-word is-outline tilt-l">Ready</span>
               </div>
-            </div>
-            <div className="solution-ecosystem">
-              <div className="eco-center">
-                <div className="eco-logo">PASSPRIVÉ</div>
+              <div>
+                <span className="hx-word is-star">✳</span>
+                <span className="hx-word is-outline is-serif tilt-r">The</span>
+                <span className="hx-word is-outline is-serif tilt-r2">Numbers</span>
               </div>
-              <div className="eco-node eco-n1"><i className="fas fa-utensils" /><span>Merchants</span></div>
-              <div className="eco-node eco-n2"><i className="fas fa-building" /><span>Corporates</span></div>
-              <div className="eco-node eco-n3"><i className="fas fa-university" /><span>Banks & Financial Institutions</span></div>
-              <div className="eco-node eco-n4"><i className="fas fa-users" /><span>Consumers</span></div>
-              <svg className="eco-lines" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-                <line x1="150" y1="150" x2="150" y2="40" stroke="rgba(255,200,100,0.3)" strokeWidth="1.5" strokeDasharray="4 4" />
-                <line x1="150" y1="150" x2="260" y2="150" stroke="rgba(255,200,100,0.3)" strokeWidth="1.5" strokeDasharray="4 4" />
-                <line x1="150" y1="150" x2="150" y2="260" stroke="rgba(255,200,100,0.3)" strokeWidth="1.5" strokeDasharray="4 4" />
-                <line x1="150" y1="150" x2="40" y2="150" stroke="rgba(255,200,100,0.3)" strokeWidth="1.5" strokeDasharray="4 4" />
-              </svg>
+              <div><span className="hx-word is-dark is-serif">Speak</span></div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section id="numbers" className="section-gap section-dark">
-        <div className="container">
-          <div className="section-label light">The Opportunity</div>
-          <h2 className="section-title light">
-            Mauritius Is Ready.<br />
-            <em>The Numbers Speak.</em>
-          </h2>
-          <div className="numbers-grid">
-            <div className="number-card"><div className="number-count">1.4M</div><div className="number-label">Population ready for a lifestyle platform</div></div>
-            <div className="number-card"><div className="number-count">MUR 65M</div><div className="number-label">Projected ecosystem value in Year 1</div></div>
-            <div className="number-card"><div className="number-count">50K+</div><div className="number-label">Active marketplace users projected - Year 1</div></div>
-            <div className="number-card"><div className="number-count">200+</div><div className="number-label">Merchant categories - dining, retail, hotels, experiences</div></div>
-            <div className="number-card"><div className="number-count">0</div><div className="number-label">Tech investment required from partners</div></div>
-            <div className="number-card"><div className="number-count">48hrs</div><div className="number-label">Average merchant onboarding time</div></div>
-          </div>
+          {numbers.map((item) => (
+            <div key={item.value} className={`hx-num is-${item.tone}`}>
+              <div className="hx-num-value">{item.value}</div>
+              <div className="hx-num-label">{item.label}</div>
+            </div>
+          ))}
         </div>
       </section>
 
