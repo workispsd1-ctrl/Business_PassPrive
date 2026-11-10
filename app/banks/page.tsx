@@ -2,14 +2,9 @@ import Link from 'next/link';
 
 export default function BanksPage() {
   return (
-    <section id="banks" className="section-gap section-dark page-shell">
+    <section id="banks" className="ppt section-gap section-dark page-shell">
       <div className="container">
-        <div
-          className="section-label eyebrow-lg"
-          style={{ display: 'block', width: '30%', padding: '10px 28px' }}
-        >
-          For Banks & Financial Institutions
-        </div>
+        <div className="section-label eyebrow-lg">For Banks &amp; Financial Institutions</div>
         <h1 className="section-title light">Turn Your Payment App<br /><em>Into a Daily Habit</em></h1>
         <p className="section-intro light">Most banking and fintech apps are opened once a month to check a balance. PASSPRIVÉ turns your app into something people open every single day.</p>
 

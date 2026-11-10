@@ -1,16 +1,16 @@
-import Image from 'next/image';
 import Link from 'next/link';
-
-const logoSrc = '/images/Logo.png';
+import { PPLogo } from '@/components/figma/PPLogo';
 
 export function SiteFooter() {
   return (
-    <footer id="footer">
+    <footer id="footer" className="pp pp-footer">
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand">
-            <Image src={logoSrc} alt="PASSPRIVÉ" className="footer-logo" width={2400} height={800} />
-            <p>Mauritius' Lifestyle Membership Platform.<br />Discover • Book • Pay • Repeat.</p>
+            <Link href="/" className="pp-footer__logo" aria-label="Passprivé home">
+              <PPLogo variant="orange" />
+            </Link>
+            <p>Mauritius&apos; Lifestyle Membership Platform.<br />Discover • Book • Pay • Repeat.</p>
             <div className="footer-contact">
               <div className="footer-contact-label">Call Us</div>
               <a className="footer-phone" href="tel:+23055008521">
@@ -28,19 +28,19 @@ export function SiteFooter() {
               <Link href="/consumers">For Consumers</Link>
               <Link href="/merchants">For Merchants</Link>
               <Link href="/corporates">For Corporates</Link>
-              <Link href="/banks">For Banks & Financial Institutions</Link>
+              <Link href="/banks">For Banks &amp; Financial Institutions</Link>
             </div>
             <div className="fl-col">
               <div className="fl-title">Features</div>
               <Link href="/merchants">Table Booking</Link>
               <Link href="/merchants">QR Menus</Link>
-              <Link href="/merchants">Order & Collect</Link>
-              <Link href="/merchants">Loyalty & Points</Link>
+              <Link href="/merchants">Order &amp; Collect</Link>
+              <Link href="/merchants">Loyalty &amp; Points</Link>
             </div>
             <div className="fl-col">
               <div className="fl-title">Company</div>
               <Link href="/about">About The Team</Link>
-              <Link href="/mission">Mission & Vision</Link>
+              <Link href="/mission">Mission &amp; Vision</Link>
               <Link href="/contact">Partner With Us</Link>
             </div>
           </div>

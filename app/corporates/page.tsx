@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function CorporatesPage() {
   return (
-    <section id="corporates" className="section-gap section-warm page-shell">
+    <section id="corporates" className="ppt section-gap section-warm page-shell">
       <div className="container">
         <div className="section-label">For Corporates</div>
         <h1 className="section-title">The Employee Benefit<br /><em>Your Team Actually Wants</em></h1>

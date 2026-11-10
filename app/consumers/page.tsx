@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function ConsumersPage() {
   return (
-    <section id="consumers" className="section-gap page-shell">
+    <section id="consumers" className="ppt section-gap page-shell">
       <div className="container">
         <div className="section-label">For Consumers</div>
         <h1 className="section-title">One Membership.<br /><em>The Best of Mauritius.</em></h1>

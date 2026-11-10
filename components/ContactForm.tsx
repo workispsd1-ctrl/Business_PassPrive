@@ -61,7 +61,7 @@ export function ContactForm() {
   }
 
   return (
-    <section id="contact" className="section-gap section-dark">
+    <section id="contact" className="ppt section-gap section-dark">
       <div className="container">
         <div className="section-label light">Let's Talk</div>
         <h2 className="section-title light">Ready to Build<br /><em>Something Big?</em></h2>

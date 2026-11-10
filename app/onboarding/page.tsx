@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function OnboardingPage() {
   return (
-    <section className="page-shell onboarding-shell">
+    <section className="ppt-onboarding page-shell onboarding-shell">
       <OnboardingClient />
     </section>
   );

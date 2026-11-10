@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function MerchantsPage() {
   return (
-    <section id="merchants" className="section-gap page-shell">
+    <section id="merchants" className="ppt section-gap page-shell">
       <div className="container">
         <div className="section-label">For Merchants</div>
         <h1 className="section-title">More Covers. More Repeat Business.<br /><em>Zero Extra Work.</em></h1>

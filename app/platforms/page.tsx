@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function PlatformsPage() {
   return (
-    <section className="section-gap page-shell">
+    <section className="ppt section-gap page-shell">
       <div className="container">
         <div className="platforms-section">
           <div className="platforms-header">
