@@ -1,5 +1,11 @@
 {
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js",
   "/mission/page": "app/mission/page.js",
-  "/about/page": "app/about/page.js",
-  "/page": "app/page.js"
+  "/consumers/page": "app/consumers/page.js",
+  "/merchants/page": "app/merchants/page.js",
+  "/corporates/page": "app/corporates/page.js",
+  "/banks/page": "app/banks/page.js",
+  "/platforms/page": "app/platforms/page.js",
+  "/about/page": "app/about/page.js"
 }
