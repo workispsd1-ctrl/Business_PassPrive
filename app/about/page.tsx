@@ -14,21 +14,35 @@ type Member = {
   name: React.ReactNode;
   role: string;
   photo: { src: string; alt: string; style: CSSProperties };
-  /** Card position on the 1440 canvas. */
-  card: [number, number];
   /** Soft glow drawn behind the card, on the canvas. */
-  backGlow: Glow;
+  glow: string;
   /** Glow drawn inside the card (relative to it). */
   innerGlow: Glow;
   text: {
-    pos: [number, number, number, number];
     theme: 'peach' | 'blue';
-    radius: number;
-    body: [number, number, number];
     lead: string;
-    copy: string;
-    date: [number, number];
-    notch?: 'kshitij' | 'pritisha' | 'tab-left' | 'tab-right';
+    /** One or more body paragraphs. */
+    copy: string | string[];
+  };
+};
+
+/**
+ * Shared layout for every team row: identical bio boxes, with the photo card
+ * alternating left / right. Row `i` (0-based) is placed on the 1440 canvas.
+ */
+const ROW = { top: 962, pitch: 660, boxW: 760, boxH: 480, cardW: 268, cardH: 368, cardRise: 119, inset: 212 };
+const BODY = { w: 540, pad: 141 };
+const rowLayout = (i: number) => {
+  const left = i % 2 === 0;
+  const boxY = ROW.top + i * ROW.pitch;
+  const cardX = left ? 120 : 1320 - ROW.cardW;
+  const cardY = boxY - ROW.cardRise;
+  const boxX = left ? cardX + ROW.inset : cardX + ROW.cardW - ROW.inset - ROW.boxW;
+  return {
+    card: at(cardX, cardY, ROW.cardW, ROW.cardH),
+    glow: at(cardX - 133.5, cardY + 39.5, 535, 583),
+    box: at(boxX, boxY, ROW.boxW, ROW.boxH),
+    bodyX: left ? BODY.pad : ROW.boxW - BODY.pad - BODY.w,
   };
 };
 
@@ -47,18 +61,12 @@ const members: Member[] = [
       alt: 'Kshitij Sharma',
       style: { ...at(-21.84, 83.86, 311.65, 284.26), objectFit: 'fill' },
     },
-    card: [120, 843],
-    backGlow: { src: '/figma/about-e14.svg', x: -13.5, y: 882.5, w: 535, h: 583 },
+    glow: '/figma/about-e14.svg',
     innerGlow: { src: '/figma/about-e12.svg', x: -157.5, y: -21.75, w: 480.75, h: 480.75 },
     text: {
-      pos: [332, 962, 740, 476],
       theme: 'peach',
-      radius: 76,
-      body: [141, 57, 480],
       lead: 'Former Head of Global eCommerce at Reckitt, Kshitij brings deep expertise in building and scaling digital businesses across global markets.',
       copy: 'His experience spans Reckitt and P&G, where he worked on large-scale brand building, digital transformation, and consumer engagement. At Passprivé, he focuses on product vision, ecosystem partnerships, and building a globally scalable business model.',
-      date: [141, 430],
-      notch: 'kshitij',
     },
   },
   {
@@ -71,17 +79,12 @@ const members: Member[] = [
       alt: 'Bruno Rochecouste',
       style: { ...at(0.25, 76.25, 268, 341) },
     },
-    card: [572.75, 1560.75],
-    backGlow: { src: '/figma/about-e17.svg', x: 500.75, y: 1584.75, w: 534, h: 585 },
+    glow: '/figma/about-e17.svg',
     innerGlow: { src: '/figma/about-e18.svg', x: -157.5, y: -21.75, w: 480.75, h: 480.75 },
     text: {
-      pos: [818, 1417.5, 468, 666],
       theme: 'blue',
-      radius: 76,
-      body: [61, 61.5, 357.75],
-      lead: 'Bruno is a commercial and transformation executive with decades of leadership experience across Mauritius, South Africa, and the Middle East. He brings a broad international perspective together with a deep understanding of commercial strategy, customer experience, and organizational transformation.',
-      copy: 'At Passprivé, he leads commercial strategy, partnerships, and market expansion.',
-      date: [317, 620],
+      lead: 'A senior commercial and business executive, Bruno brings decades of experience across South Africa, Mauritius, and the Middle East, with a strong track record in driving growth, strategic change, and market expansion.',
+      copy: ['His experience spans financial services, hospitality, tourism, and real estate, where he has built high-performing teams, repositioned businesses, strengthened customer propositions, and delivered sustainable commercial growth.', 'At Passprivé, Bruno leads and drives the business in Mauritius, with responsibility for commercial strategy, merchant acquisition and growth, strategic partnerships, market development, stakeholder engagement, and the execution of the company’s local growth agenda.'],
     },
   },
   {
@@ -94,18 +97,12 @@ const members: Member[] = [
       alt: 'Pritisha Zalpuri',
       style: { ...at(-0.4, 92, 242.308, 315) },
     },
-    card: [776, 2246],
-    backGlow: { src: '/figma/about-e15.svg', x: 531.75, y: 1974.75, w: 534, h: 585 },
+    glow: '/figma/about-e15.svg',
     innerGlow: { src: '/figma/about-e16.svg', x: -201.75, y: -36.75, w: 500.2, h: 500.2 },
     text: {
-      pos: [120, 1995.75, 738, 480],
       theme: 'peach',
-      radius: 75,
-      body: [65, 53, 480],
       lead: 'Pritisha leads technology and product execution, with over a decade of experience across financial services and IT.',
       copy: 'She has worked with S&P, Old Mutual Bank in South Africa, and Tata Consultancy Services, building and managing complex systems at scale. At Passprivé, she drives platform architecture, product reliability, and execution velocity.',
-      date: [65, 434],
-      notch: 'pritisha',
     },
   },
   {
@@ -118,18 +115,12 @@ const members: Member[] = [
       alt: 'Bharat Nanavathula',
       style: { ...at(-41, 66, 350, 374) },
     },
-    card: [422.25, 2996.25],
-    backGlow: { src: '/figma/about-e17.svg', x: 400.75, y: 2824.5, w: 534, h: 585 },
+    glow: '/figma/about-e17.svg',
     innerGlow: { src: '/figma/about-e18.svg', x: -166.5, y: -74.25, w: 480.75, h: 480.75 },
     text: {
-      pos: [612, 2595.75, 675, 609],
       theme: 'blue',
-      radius: 75,
-      body: [65, 121, 537],
       lead: 'Bharat leads engineering execution at Passprivé, focused on building reliable, high-performance product experiences across the platform.',
       copy: 'He works across frontend and backend systems to translate business goals into scalable technical solutions, ensuring fast iteration, product quality, and dependable delivery as the ecosystem grows.',
-      date: [501, 563],
-      notch: 'tab-left',
     },
   },
   {
@@ -143,18 +134,12 @@ const members: Member[] = [
       alt: 'Yeshna Ramdooharika',
       style: { ...at(-26, 96, 320, 326) },
     },
-    card: [724, 3686],
-    backGlow: { src: '/figma/about-e14.svg', x: 590.5, y: 3725.5, w: 535, h: 583 },
+    glow: '/figma/about-e14.svg',
     innerGlow: { src: '/figma/about-e12.svg', x: -157.5, y: -21.75, w: 480.75, h: 480.75 },
     text: {
-      pos: [120, 3325, 672, 680],
       theme: 'peach',
-      radius: 45,
-      body: [65, 113, 480],
       lead: 'Yeshna brings strong experience across merchant relationships, banking, marketing, operations and customer engagement. Prior to joining Passprivé, she spent several years with SBM Bank (Mauritius), where she worked closely with merchants, supported point-of-sale operations, drove merchant adoption and helped promote banking products and services.',
       copy: 'At Passprivé, Yeshna focuses on building strong merchant relationships, supporting onboarding and driving merchant growth and engagement across the platform.',
-      date: [66, 634],
-      notch: 'tab-right',
     },
   },
 ];
@@ -169,7 +154,9 @@ const bannerFaces = [
 ];
 
 /** Height of the page canvas (footer starts here) on the 1440 frame. */
-const CANVAS_HEIGHT = 4886.25;
+const opsRow = rowLayout(members.length);
+const ACTIONS_Y = ROW.top + (members.length + 1) * ROW.pitch - 100;
+const CANVAS_HEIGHT = ACTIONS_Y + 220;
 
 export default function AboutPage() {
   return (
@@ -205,16 +192,12 @@ export default function AboutPage() {
         </p>
 
         {/* Team members */}
-        {members.map((m) => (
+        {members.map((m, i) => {
+          const L = rowLayout(i);
+          return (
           <section className={`pp-member pp-member--${m.key}`} key={m.key}>
-            <img
-              className="pa pp-member__backglow"
-              src={m.backGlow.src}
-              alt=""
-              aria-hidden="true"
-              style={at(m.backGlow.x, m.backGlow.y, m.backGlow.w, m.backGlow.h)}
-            />
-            <div className={`pa pp-person pp-person--${m.tone}`} style={at(m.card[0], m.card[1], 268, 368)}>
+            <img className="pa pp-member__backglow" src={m.glow} alt="" aria-hidden="true" style={L.glow} />
+            <div className={`pa pp-person pp-person--${m.tone}`} style={L.card}>
               <img
                 className="pa pp-person__glow"
                 src={m.innerGlow.src}
@@ -229,30 +212,24 @@ export default function AboutPage() {
               <img className="pa pp-person__photo" src={m.photo.src} alt={m.photo.alt} style={m.photo.style} />
               <span className="pp-person__fade" aria-hidden="true" />
             </div>
-            <article
-              className={`pa pp-bio pp-bio--${m.text.theme}`}
-              style={{ ...at(...m.text.pos), '--r': m.text.radius } as CSSProperties}
-            >
-              {m.text.notch && <span className={`pp-bio__notch pp-bio__notch--${m.text.notch}`} aria-hidden="true" />}
-              <div className="pa pp-bio__body" style={at(m.text.body[0], m.text.body[1], m.text.body[2])}>
+            <article className={`pa pp-bio pp-bio--${m.text.theme}`} style={L.box}>
+              <div className="pp-bio__body" style={{ '--bx': L.bodyX, '--bw': BODY.w } as CSSProperties}>
                 <p className="pp-bio__lead">{m.text.lead}</p>
-                <p className="pp-bio__copy">{m.text.copy}</p>
+                {[m.text.copy].flat().map((c) => (
+                  <p className="pp-bio__copy" key={c}>
+                    {c}
+                  </p>
+                ))}
               </div>
-           
             </article>
           </section>
-        ))}
+          );
+        })}
 
         {/* Local operations */}
         <section className="pp-member pp-member--ops">
-          <img
-            className="pa pp-member__backglow"
-            src="/figma/about-e13.svg"
-            alt=""
-            aria-hidden="true"
-            style={at(98.5, 4332.25, 561, 622.5)}
-          />
-          <div className="pa pp-person pp-person--ops" style={at(370.25, 4436.25, 268, 368)}>
+          <img className="pa pp-member__backglow" src="/figma/about-e13.svg" alt="" aria-hidden="true" style={opsRow.glow} />
+          <div className="pa pp-person pp-person--ops" style={opsRow.card}>
             <img className="pa pp-person__ops-icon" src="/figma/team-ops-icon.png" alt="" style={at(35.43, 147.5, 195.411, 191.25)} />
             <span className="pp-person__ops-tint" aria-hidden="true" />
             <div className="pp-person__name pp-person__name--ops">
@@ -260,9 +237,8 @@ export default function AboutPage() {
               <p className="pp-person__role">LOCAL OPERATIONS</p>
             </div>
           </div>
-          <article className="pa pp-bio pp-bio--blue" style={{ ...at(560, 4035.75, 675, 609), '--r': 75 } as CSSProperties}>
-            <span className="pp-bio__notch pp-bio__notch--tab-left" aria-hidden="true" />
-            <div className="pa pp-bio__body" style={at(65, 121, 537)}>
+          <article className="pa pp-bio pp-bio--blue" style={opsRow.box}>
+            <div className="pp-bio__body" style={{ '--bx': opsRow.bodyX, '--bw': BODY.w } as CSSProperties}>
               <p className="pp-bio__lead">
                 Our local operations team ensures strong execution across merchant onboarding, partnerships, and
                 customer experience.
@@ -272,12 +248,11 @@ export default function AboutPage() {
                 adoption, ensuring both merchants and consumers derive consistent value from the platform.
               </p>
             </div>
-          
           </article>
         </section>
 
         {/* Actions */}
-        <div className="pa pp-about-actions" style={at(1060, 4682, 260)}>
+        <div className="pa pp-about-actions" style={at(590, ACTIONS_Y, 260)}>
           <Link href="/contact" className="pp-btn pp-btn--gradient">
             Partner With Us
             <img src="/figma/ic-trending-flat.svg" alt="" width={24} height={24} />

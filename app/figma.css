@@ -563,27 +563,15 @@
 .pp-person__name--ops .pp-person__title { width: calc(159 * var(--u)); font-weight: 800; line-height: calc(22.5 * var(--u)); letter-spacing: calc(0.2 * var(--u)); white-space: normal; }
 .pp-person__name--ops .pp-person__role { margin-top: 0; font-weight: 600; }
 
-/* Bio cards: border drawn as an inset shadow so the white notches can cover it (as in Figma). */
-.pp-bio { overflow: hidden; border-radius: calc(var(--r) * var(--u)); }
+/* Bio cards: one shared size and text layout for every team member. */
+.pp-bio { overflow: hidden; display: flex; align-items: center; border-radius: calc(60 * var(--u)); }
 .pp-bio--peach { background: #fff7f3; box-shadow: inset 0 0 0 calc(3 * var(--u)) #ffe6d6; }
 .pp-bio--blue { background: #daf1ff; box-shadow: inset 0 0 0 calc(3 * var(--u)) #2a7bbb; }
-.pp-bio > .pa { left: calc((var(--x) + 3) * var(--u)); top: calc((var(--y) + 3) * var(--u)); }
-.pp-bio__body { display: flex; flex-direction: column; gap: calc(36 * var(--u)); height: calc(278.25 * var(--u)); }
-.pp-bio__body > p { flex: 1 0 0; min-height: 1px; }
-.pp-member--bruno .pp-bio__body,
-.pp-member--yeshna .pp-bio__body { height: auto; }
-.pp-member--bruno .pp-bio__body > p,
-.pp-member--yeshna .pp-bio__body > p { flex: none; }
-.pp-bio__lead { font-weight: 600; font-size: calc(24 * var(--u)); }
+.pp-bio__body { display: flex; flex-direction: column; gap: calc(16 * var(--u)); margin-left: calc(var(--bx) * var(--u)); width: calc(var(--bw) * var(--u)); }
+.pp-bio__lead { margin-bottom: calc(6 * var(--u)); font-weight: 600; font-size: calc(21 * var(--u)); line-height: 1.35; }
 .pp-bio--peach .pp-bio__lead { color: #611b00; }
 .pp-bio--blue .pp-bio__lead { color: #14485d; }
-.pp-bio__copy { font-size: calc(18 * var(--u)); color: #616161; }
-.pp-bio__date { font-weight: 500; font-size: calc(18 * var(--u)); color: #aaa; white-space: nowrap; }
-.pp-bio__notch { position: absolute; background: #fff; }
-.pp-bio__notch--kshitij { left: calc(477 * var(--u)); bottom: calc(-24 * var(--u)); width: calc(288 * var(--u)); height: calc(64 * var(--u)); border-radius: calc(135.75 * var(--u)) 0 calc(131.25 * var(--u)) 0; }
-.pp-bio__notch--pritisha { left: calc(664.5 * var(--u)); top: 0; width: calc(286.5 * var(--u)); height: calc(109.5 * var(--u)); border-radius: 0 0 0 calc(94.5 * var(--u)); }
-.pp-bio__notch--tab-left { left: calc(145.5 * var(--u)); top: calc(-330 * var(--u)); width: calc(309 * var(--u)); height: calc(369.75 * var(--u)); border-radius: calc(45 * var(--u)); }
-.pp-bio__notch--tab-right { left: calc(274.5 * var(--u)); top: calc(-312 * var(--u)); width: calc(309 * var(--u)); height: calc(369.75 * var(--u)); border-radius: calc(45 * var(--u)); }
+.pp-bio__copy { font-size: calc(16 * var(--u)); line-height: 1.55; color: #616161; }
 
 /* Round team faces inside the banner (replaces the "TEAM IMAGES" placeholder). */
 .pp-team-banner__team { position: absolute; left: 0; right: 0; top: calc(128 * var(--u)); display: flex; flex-direction: column; align-items: center; gap: calc(22 * var(--u)); }
@@ -600,25 +588,11 @@
 .pp-team-banner__faces span:first-child { margin-left: 0; }
 .pp-team-banner__note { font-weight: 500; font-size: calc(15 * var(--u)); letter-spacing: .32em; text-transform: uppercase; color: rgba(255, 255, 255, .85); }
 
-/* Stacking follows the Figma layer order. */
-.pp-member--bharat .pp-bio, .pp-member--ops .pp-bio { z-index: 1; }
-.pp-member--pritisha .pp-bio { z-index: 2; }
-.pp-member--yeshna .pp-bio { z-index: 3; }
-.pp-member--yeshna .pp-member__backglow { z-index: 4; }
-.pp-member--yeshna .pp-person { z-index: 5; }
-.pp-member--kshitij .pp-bio { z-index: 6; }
-.pp-member--kshitij .pp-member__backglow { z-index: 7; }
-.pp-member--kshitij .pp-person { z-index: 8; }
-.pp-member--pritisha .pp-member__backglow { z-index: 9; }
-.pp-member--pritisha .pp-person { z-index: 10; }
+/* Team rows: bio box under its glow, photo card on top. */
+.pp-member .pp-bio { z-index: 1; }
+.pp-member__backglow { z-index: 2; }
+.pp-member .pp-person { z-index: 3; }
 .pp-team-banner, .pp-about-intro, .pp-about-lede { z-index: 10; }
-.pp-member--bruno .pp-bio { z-index: 11; }
-.pp-member--bruno .pp-member__backglow { z-index: 12; }
-.pp-member--bruno .pp-person { z-index: 13; }
-.pp-member--bharat .pp-member__backglow { z-index: 14; }
-.pp-member--bharat .pp-person { z-index: 15; }
-.pp-member--ops .pp-member__backglow { z-index: 16; }
-.pp-member--ops .pp-person { z-index: 17; }
 .pp-about-actions { z-index: 18; display: flex; flex-direction: column; gap: calc(12 * var(--u)); }
 
 /* ==========================================================================
@@ -839,13 +813,10 @@
   .pp-canvas .pp-person { width: 268px; height: 368px; z-index: 2; }
   .pp-canvas .pp-person .pa { position: absolute; left: calc(var(--x) * 1px); top: calc(var(--y) * 1px); width: calc(var(--w) * 1px); height: calc(var(--h) * 1px); }
   .pp-canvas .pp-bio { width: 100%; margin-top: -48px; padding: 76px 28px 32px; border-radius: 40px; z-index: 1; }
-  .pp-bio__notch { display: none; }
-  .pp-canvas .pp-bio > .pa { position: static; width: auto; height: auto; }
-  .pp-bio__body { height: auto; gap: 20px; }
-  .pp-bio__body > p { flex: none; }
+  .pp-canvas .pp-bio { display: block; }
+  .pp-bio__body { margin-left: 0; width: auto; gap: 16px; }
   .pp-bio__lead { font-size: 21px; }
   .pp-bio__copy { font-size: 17px; }
-  .pp-bio__date { margin-top: 24px; font-size: 16px; }
   .pp-about-actions { width: 100%; max-width: 360px; margin: 24px auto 0; }
 
   /* vision & mission */
